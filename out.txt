@@ -1,0 +1,1014 @@
+Підключаємось...
+Чекаємо готовності автопілота...
+BEFORE SIM_WIND_SPD 3.0
+BEFORE SIM_WIND_DIR 30.0
+BEFORE SIM_WIND_TURB 2.0
+BEFORE SIM_WIND_TURB_FREQ ERR 'SIM_WIND_TURB_FREQ'
+set SIM_WIND_SPD = 3 (try 1)
+readback SIM_WIND_SPD = 3.0
+set SIM_WIND_DIR = 30 (try 1)
+readback SIM_WIND_DIR = 30.0
+set SIM_WIND_TURB = 2 (try 1)
+readback SIM_WIND_TURB = 2.0
+set SIM_WIND_TURB_FREQ = 0.2 (try 1)
+set/read SIM_WIND_TURB_FREQ failed: 'SIM_WIND_TURB_FREQ'
+set SIM_WIND_TURB_FREQ = 0.2 (try 2)
+set/read SIM_WIND_TURB_FREQ failed: 'SIM_WIND_TURB_FREQ'
+set SIM_WIND_TURB_FREQ = 0.2 (try 3)
+set/read SIM_WIND_TURB_FREQ failed: 'SIM_WIND_TURB_FREQ'
+set SIM_WIND_TURB_FREQ = 0.2 (try 4)
+set/read SIM_WIND_TURB_FREQ failed: 'SIM_WIND_TURB_FREQ'
+set SIM_WIND_TURB_FREQ = 0.2 (try 5)
+set/read SIM_WIND_TURB_FREQ failed: 'SIM_WIND_TURB_FREQ'
+AFTER SIM_WIND_SPD 3.0
+AFTER SIM_WIND_DIR 30.0
+AFTER SIM_WIND_TURB 2.0
+AFTER SIM_WIND_TURB_FREQ ERR 'SIM_WIND_TURB_FREQ'
+Чекаємо arm...
+Стартова точка: 50.4507389, 30.4612421
+FSM ініціалізовано
+[TAKEOFF] alt=0.00 throttle=1580
+[TAKEOFF] alt=0.00 throttle=1580
+[TAKEOFF] alt=0.00 throttle=1580
+[TAKEOFF] alt=0.08 throttle=1580
+[TAKEOFF] alt=0.54 throttle=1580
+[TAKEOFF] alt=1.07 throttle=1580
+[TAKEOFF] alt=2.41 throttle=1580
+[TAKEOFF] alt=3.97 throttle=1580
+[TAKEOFF] alt=4.84 throttle=1580
+[TAKEOFF] alt=6.71 throttle=1580
+[TAKEOFF] alt=7.77 throttle=1580
+[TAKEOFF] alt=10.14 throttle=1580
+[TAKEOFF] alt=12.48 throttle=1580
+[TAKEOFF] alt=13.58 throttle=1580
+[TAKEOFF] alt=15.82 throttle=1580
+[TAKEOFF] alt=18.12 throttle=1580
+[TAKEOFF] alt=19.34 throttle=1580
+[TAKEOFF] alt=21.67 throttle=1580
+[TAKEOFF] alt=22.84 throttle=1580
+[TAKEOFF] alt=25.23 throttle=1580
+[TAKEOFF] alt=27.75 throttle=1580
+[TAKEOFF] alt=28.96 throttle=1580
+[TAKEOFF] alt=31.36 throttle=1580
+[TAKEOFF] alt=33.82 throttle=1580
+[TAKEOFF] alt=35.03 throttle=1580
+[TAKEOFF] alt=37.45 throttle=1580
+[TAKEOFF] alt=38.66 throttle=1580
+[TAKEOFF] alt=41.11 throttle=1580
+[TAKEOFF] alt=43.32 throttle=1580
+[TAKEOFF] alt=44.40 throttle=1580
+[TAKEOFF] alt=46.67 throttle=1580
+[TAKEOFF] alt=49.02 throttle=1580
+[TAKEOFF] alt=50.09 throttle=1580
+[TAKEOFF] alt=52.38 throttle=1580
+[TAKEOFF] alt=53.52 throttle=1580
+[TAKEOFF] alt=55.81 throttle=1580
+[TAKEOFF] alt=58.04 throttle=1580
+[TAKEOFF] alt=59.25 throttle=1580
+[TAKEOFF] alt=61.62 throttle=1580
+[TAKEOFF] alt=62.82 throttle=1580
+[TAKEOFF] alt=65.16 throttle=1580
+[TAKEOFF] alt=67.41 throttle=1580
+[TAKEOFF] alt=68.51 throttle=1580
+[TAKEOFF] alt=70.78 throttle=1580
+[TAKEOFF] alt=73.06 throttle=1580
+[TAKEOFF] alt=74.16 throttle=1580
+[TAKEOFF] alt=76.50 throttle=1580
+[TAKEOFF] alt=78.78 throttle=1580
+[TAKEOFF] alt=79.93 throttle=1580
+[TAKEOFF] alt=82.32 throttle=1580
+[TAKEOFF] alt=83.55 throttle=1580
+[TAKEOFF] alt=85.91 throttle=1580
+[TAKEOFF] alt=88.32 throttle=1580
+[TAKEOFF] alt=89.57 throttle=1580
+[TAKEOFF] alt=92.08 throttle=1580
+[TAKEOFF] alt=94.65 throttle=1580
+[TAKEOFF] alt=95.95 throttle=1580
+[TAKEOFF] alt=98.55 throttle=1580
+[TAKEOFF] alt=99.88 throttle=1580
+[TAKEOFF] alt=102.47 throttle=1580
+[TAKEOFF] alt=105.05 throttle=1580
+[TAKEOFF] alt=106.35 throttle=1580
+[TAKEOFF] alt=108.91 throttle=1580
+[TAKEOFF] alt=111.58 throttle=1580
+[TAKEOFF] alt=113.02 throttle=1580
+[TAKEOFF] alt=115.76 throttle=1580
+[TAKEOFF] alt=117.04 throttle=1580
+[TAKEOFF] alt=119.50 throttle=1580
+[TAKEOFF] alt=121.91 throttle=1580
+[TAKEOFF] alt=123.15 throttle=1580
+[TAKEOFF] alt=125.57 throttle=1580
+[TAKEOFF] alt=127.88 throttle=1580
+[TAKEOFF] alt=129.02 throttle=1580
+[TAKEOFF] alt=131.25 throttle=1580
+[TAKEOFF] alt=132.36 throttle=1580
+[TAKEOFF] alt=134.83 throttle=1580
+[TAKEOFF] alt=137.41 throttle=1580
+[TAKEOFF] alt=138.76 throttle=1580
+[TAKEOFF] alt=141.39 throttle=1580
+[TAKEOFF] alt=142.66 throttle=1580
+[TAKEOFF] alt=145.24 throttle=1580
+[TAKEOFF] alt=147.94 throttle=1580
+[TAKEOFF] alt=149.22 throttle=1580
+[TAKEOFF] alt=151.58 throttle=1565
+[TAKEOFF] alt=153.93 throttle=1565
+[TAKEOFF] alt=155.18 throttle=1565
+[TAKEOFF] alt=157.66 throttle=1565
+[TAKEOFF] alt=158.89 throttle=1565
+[TAKEOFF] alt=161.27 throttle=1565
+[TAKEOFF] alt=163.69 throttle=1565
+[TAKEOFF] alt=164.92 throttle=1565
+[TAKEOFF] alt=167.48 throttle=1565
+[TAKEOFF] alt=168.81 throttle=1565
+[TAKEOFF] alt=171.51 throttle=1565
+[TAKEOFF] alt=174.05 throttle=1565
+[TAKEOFF] alt=175.24 throttle=1565
+[TAKEOFF] alt=177.63 throttle=1545
+[TAKEOFF] alt=178.66 throttle=1545
+[TAKEOFF] alt=180.56 throttle=1545
+[TAKEOFF] alt=182.49 throttle=1545
+[TAKEOFF] alt=183.45 throttle=1545
+[TAKEOFF] alt=185.28 throttle=1545
+[TAKEOFF] alt=186.26 throttle=1545
+[TAKEOFF] alt=188.23 throttle=1545
+[TAKEOFF] alt=190.12 throttle=1485
+[TAKEOFF] alt=191.07 throttle=1470
+[TAKEOFF] alt=192.67 throttle=1461
+[TAKEOFF] alt=193.84 throttle=1467
+[TAKEOFF] alt=194.30 throttle=1478
+[TAKEOFF] alt=195.01 throttle=1474
+[TAKEOFF] alt=195.55 throttle=1476
+[TAKEOFF] alt=195.82 throttle=1480
+[TAKEOFF] alt=196.26 throttle=1478
+[TAKEOFF] alt=196.41 throttle=1482
+[TAKEOFF] alt=196.67 throttle=1481
+[TAKEOFF] alt=196.91 throttle=1481
+[TAKEOFF] alt=197.03 throttle=1483
+[TAKEOFF] alt=197.16 throttle=1482
+[TAKEOFF] alt=197.25 throttle=1483
+[TAKEOFF] alt=197.32 throttle=1483
+[TAKEOFF] alt=197.46 throttle=1482
+[TAKEOFF] alt=197.59 throttle=1483
+[TAKEOFF] alt=197.85 throttle=1481
+[TAKEOFF] alt=198.09 throttle=1481
+[TAKEOFF] alt=198.19 throttle=1483
+[TAKEOFF] alt=198.47 throttle=1480
+[TAKEOFF] alt=198.83 throttle=1479
+[TAKEOFF] alt=198.99 throttle=1482
+[TAKEOFF] alt=199.30 throttle=1480
+[TAKEOFF] alt=199.50 throttle=1482
+Перехід TAKEOFF -> HOLD
+[WIND_EST] dist=137.2m time=26.3s dir=213.1 speed=5.21
+[HOLD] alt=199.90 error=0.10 vs=0.00 throttle=1474
+[HOLD] alt=200.25 error=-0.25 vs=1.77 throttle=1459
+[HOLD] alt=200.43 error=-0.43 vs=0.90 throttle=1465
+[HOLD] alt=200.75 error=-0.75 vs=1.63 throttle=1459
+[HOLD] alt=201.01 error=-1.01 vs=1.29 throttle=1461
+[HOLD] alt=201.10 error=-1.10 vs=0.46 throttle=1467
+[HOLD] alt=201.29 error=-1.29 vs=0.96 throttle=1463
+[HOLD] alt=201.38 error=-1.38 vs=0.43 throttle=1467
+[HOLD] alt=201.43 error=-1.43 vs=0.26 throttle=1468
+[HOLD] alt=201.45 error=-1.45 vs=0.11 throttle=1469
+[HOLD] alt=201.46 error=-1.46 vs=0.02 throttle=1470
+[HOLD] alt=201.47 error=-1.47 vs=0.05 throttle=1469
+[HOLD] alt=201.48 error=-1.48 vs=0.07 throttle=1469
+[HOLD] alt=201.48 error=-1.48 vs=-0.02 throttle=1470
+[HOLD] alt=201.31 error=-1.31 vs=-0.84 throttle=1477
+[HOLD] alt=201.20 error=-1.20 vs=-0.53 throttle=1475
+[HOLD] alt=201.04 error=-1.04 vs=-0.80 throttle=1477
+[HOLD] alt=200.94 error=-0.94 vs=-0.50 throttle=1475
+[HOLD] alt=200.87 error=-0.87 vs=-0.37 throttle=1474
+[HOLD] alt=200.75 error=-0.75 vs=-0.59 throttle=1476
+[HOLD] alt=200.72 error=-0.72 vs=-0.18 throttle=1473
+[HOLD] alt=200.57 error=-0.57 vs=-0.73 throttle=1478
+[HOLD] alt=200.47 error=-0.47 vs=-0.52 throttle=1476
+[HOLD] alt=200.55 error=-0.55 vs=0.38 throttle=1469
+[HOLD] alt=200.55 error=-0.55 vs=0.01 throttle=1472
+[HOLD] alt=200.47 error=-0.47 vs=-0.41 throttle=1476
+[HOLD] alt=200.41 error=-0.41 vs=-0.26 throttle=1475
+[HOLD] alt=200.32 error=-0.32 vs=-0.47 throttle=1476
+[HOLD] alt=200.25 error=-0.25 vs=-0.34 throttle=1476
+[HOLD] alt=200.25 error=-0.25 vs=0.02 throttle=1473
+[HOLD] alt=200.33 error=-0.33 vs=0.40 throttle=1469
+[HOLD] alt=200.36 error=-0.36 vs=0.14 throttle=1471
+[HOLD] alt=200.28 error=-0.28 vs=-0.40 throttle=1476
+[HOLD] alt=200.19 error=-0.19 vs=-0.47 throttle=1477
+[HOLD] alt=200.18 error=-0.18 vs=-0.04 throttle=1473
+[HOLD] alt=200.21 error=-0.21 vs=0.14 throttle=1472
+[HOLD] alt=200.28 error=-0.28 vs=0.34 throttle=1470
+[HOLD] alt=200.25 error=-0.25 vs=-0.11 throttle=1474
+[HOLD] alt=200.18 error=-0.18 vs=-0.38 throttle=1476
+[HOLD] alt=200.14 error=-0.14 vs=-0.19 throttle=1475
+[HOLD] alt=200.06 error=-0.06 vs=-0.41 throttle=1477
+[HOLD] alt=200.08 error=-0.08 vs=0.11 throttle=1472
+[HOLD] alt=200.11 error=-0.11 vs=0.15 throttle=1472
+[HOLD] alt=200.18 error=-0.18 vs=0.35 throttle=1470
+[HOLD] alt=200.22 error=-0.22 vs=0.19 throttle=1471
+[HOLD] alt=200.29 error=-0.29 vs=0.38 throttle=1470
+[HOLD] alt=200.29 error=-0.29 vs=-0.03 throttle=1473
+[HOLD] alt=200.26 error=-0.26 vs=-0.15 throttle=1474
+[HOLD] alt=200.23 error=-0.23 vs=-0.12 throttle=1474
+[HOLD] alt=200.20 error=-0.20 vs=-0.17 throttle=1474
+Тест утримання завершено
+[CAPTURE_LINE] line=-146.9 cross_sign=-1 target_hdg=123.1
+Перехід HOLD -> CAPTURE_LINE
+[CAPTURE_LINE/CAPTURE] xtrack=-331.8 absx=331.8 alt=200.2 gs=2.99 hdg=0.0 thdg=-70.9 herr=-70.9 roll=1455 pitch=1415 yaw=1430 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-331.9 absx=331.9 alt=200.2 gs=2.94 hdg=358.0 thdg=-70.9 herr=-68.9 roll=1455 pitch=1415 yaw=1430 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-331.8 absx=331.8 alt=200.1 gs=2.84 hdg=346.0 thdg=-70.9 herr=-56.9 roll=1455 pitch=1415 yaw=1430 thr=1476 nprog=2
+[CAPTURE_LINE/CAPTURE] xtrack=-331.7 absx=331.7 alt=200.1 gs=2.81 hdg=340.0 thdg=-70.9 herr=-50.9 roll=1455 pitch=1415 yaw=1430 thr=1476 nprog=3
+[CAPTURE_LINE/CAPTURE] xtrack=-331.5 absx=331.5 alt=200.0 gs=2.84 hdg=330.0 thdg=-70.9 herr=-40.9 roll=1455 pitch=1415 yaw=1430 thr=1476 nprog=4
+[CAPTURE_LINE/CAPTURE] xtrack=-331.3 absx=331.3 alt=199.9 gs=2.91 hdg=324.0 thdg=-70.9 herr=-34.9 roll=1455 pitch=1415 yaw=1430 thr=1476 nprog=5
+[CAPTURE_LINE/CAPTURE] xtrack=-330.8 absx=330.8 alt=199.8 gs=3.03 hdg=314.0 thdg=-70.9 herr=-24.9 roll=1455 pitch=1415 yaw=1430 thr=1479 nprog=6
+[CAPTURE_LINE/CAPTURE] xtrack=-330.3 absx=330.3 alt=199.8 gs=3.23 hdg=303.0 thdg=-70.9 herr=-13.9 roll=1455 pitch=1415 yaw=1435 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-330.0 absx=330.0 alt=199.8 gs=3.32 hdg=298.0 thdg=-70.9 herr=-8.9 roll=1460 pitch=1415 yaw=1435 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-329.3 absx=329.3 alt=199.9 gs=3.51 hdg=289.0 thdg=-70.9 herr=0.1 roll=1500 pitch=1415 yaw=1501 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-329.0 absx=329.0 alt=200.0 gs=3.59 hdg=284.0 thdg=-70.9 herr=5.1 roll=1523 pitch=1415 yaw=1545 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-328.3 absx=328.3 alt=200.0 gs=3.69 hdg=284.0 thdg=-70.9 herr=5.1 roll=1523 pitch=1415 yaw=1545 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-327.5 absx=327.5 alt=200.2 gs=3.71 hdg=290.0 thdg=-70.9 herr=-0.9 roll=1496 pitch=1415 yaw=1492 thr=1467 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-327.1 absx=327.1 alt=200.3 gs=3.71 hdg=293.0 thdg=-70.9 herr=-3.9 roll=1482 pitch=1415 yaw=1465 thr=1469 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-326.3 absx=326.3 alt=200.4 gs=3.75 hdg=293.0 thdg=-70.9 herr=-3.9 roll=1482 pitch=1415 yaw=1465 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-325.5 absx=325.5 alt=200.5 gs=3.78 hdg=289.0 thdg=-70.9 herr=0.1 roll=1500 pitch=1415 yaw=1501 thr=1468 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-325.1 absx=325.1 alt=200.5 gs=3.80 hdg=287.0 thdg=-70.9 herr=2.1 roll=1509 pitch=1415 yaw=1518 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-324.2 absx=324.2 alt=200.5 gs=3.84 hdg=287.0 thdg=-70.9 herr=2.1 roll=1509 pitch=1415 yaw=1518 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-323.4 absx=323.4 alt=200.5 gs=3.84 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-322.9 absx=322.9 alt=200.5 gs=3.85 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-322.0 absx=322.0 alt=200.7 gs=3.87 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1467 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-321.6 absx=321.6 alt=200.7 gs=3.87 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1470 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-320.7 absx=320.7 alt=200.7 gs=3.88 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-319.8 absx=319.8 alt=200.8 gs=3.89 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-319.4 absx=319.4 alt=200.8 gs=3.91 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-318.5 absx=318.5 alt=200.8 gs=3.91 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-318.0 absx=318.0 alt=200.7 gs=3.92 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-317.1 absx=317.1 alt=200.6 gs=3.93 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-316.2 absx=316.2 alt=200.5 gs=3.96 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-315.8 absx=315.8 alt=200.4 gs=3.95 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-314.8 absx=314.8 alt=200.3 gs=3.97 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-313.9 absx=313.9 alt=200.2 gs=3.98 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-313.5 absx=313.5 alt=200.1 gs=3.98 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-312.5 absx=312.5 alt=200.1 gs=4.00 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-312.1 absx=312.1 alt=200.2 gs=4.01 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-311.1 absx=311.1 alt=200.2 gs=4.02 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-310.2 absx=310.2 alt=200.4 gs=3.98 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1468 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-309.8 absx=309.8 alt=200.4 gs=4.00 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1470 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-308.9 absx=308.9 alt=200.5 gs=3.97 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-307.9 absx=307.9 alt=200.3 gs=3.99 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-307.5 absx=307.5 alt=200.3 gs=3.99 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-306.5 absx=306.5 alt=200.1 gs=4.00 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1480 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-306.1 absx=306.1 alt=200.1 gs=4.01 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-305.1 absx=305.1 alt=200.1 gs=4.02 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-304.2 absx=304.2 alt=200.1 gs=4.00 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-303.7 absx=303.7 alt=200.1 gs=3.99 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-302.8 absx=302.8 alt=200.1 gs=3.99 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-302.3 absx=302.3 alt=200.1 gs=3.99 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-301.4 absx=301.4 alt=200.1 gs=4.01 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-300.5 absx=300.5 alt=200.1 gs=4.02 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-300.0 absx=300.0 alt=200.1 gs=4.01 hdg=288.0 thdg=-70.9 herr=1.1 roll=1505 pitch=1415 yaw=1509 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-299.1 absx=299.1 alt=200.0 gs=4.02 hdg=288.0 thdg=-66.9 herr=5.1 roll=1523 pitch=1418 yaw=1545 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-298.6 absx=298.6 alt=200.0 gs=4.01 hdg=288.0 thdg=-66.9 herr=5.1 roll=1523 pitch=1418 yaw=1545 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-297.7 absx=297.7 alt=200.0 gs=3.98 hdg=293.0 thdg=-66.9 herr=0.1 roll=1500 pitch=1418 yaw=1501 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-296.8 absx=296.8 alt=200.0 gs=3.90 hdg=297.0 thdg=-66.9 herr=-3.9 roll=1482 pitch=1418 yaw=1465 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-296.3 absx=296.3 alt=200.0 gs=3.87 hdg=296.0 thdg=-66.9 herr=-2.9 roll=1487 pitch=1418 yaw=1474 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-295.4 absx=295.4 alt=200.1 gs=3.87 hdg=293.0 thdg=-66.9 herr=0.1 roll=1500 pitch=1418 yaw=1501 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-295.0 absx=295.0 alt=200.1 gs=3.88 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-294.0 absx=294.0 alt=200.1 gs=3.89 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-293.1 absx=293.1 alt=200.1 gs=3.88 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-292.7 absx=292.7 alt=200.1 gs=3.88 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-291.8 absx=291.8 alt=200.0 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-290.9 absx=290.9 alt=199.9 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-290.4 absx=290.4 alt=199.8 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-289.5 absx=289.5 alt=199.7 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1481 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-288.6 absx=288.6 alt=199.6 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-288.2 absx=288.2 alt=199.6 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-287.3 absx=287.3 alt=199.7 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-286.4 absx=286.4 alt=199.6 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-285.9 absx=285.9 alt=199.6 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-285.0 absx=285.0 alt=199.7 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-284.1 absx=284.1 alt=199.7 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-283.7 absx=283.7 alt=199.7 gs=3.88 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-282.8 absx=282.8 alt=199.8 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-281.9 absx=281.9 alt=199.7 gs=3.89 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-281.4 absx=281.4 alt=199.7 gs=3.89 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-280.5 absx=280.5 alt=199.8 gs=3.89 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-280.0 absx=280.0 alt=199.8 gs=3.89 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-279.1 absx=279.1 alt=199.8 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-278.2 absx=278.2 alt=199.8 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-277.8 absx=277.8 alt=199.8 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-276.8 absx=276.8 alt=199.8 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-276.4 absx=276.4 alt=199.7 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-275.5 absx=275.5 alt=199.8 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-274.6 absx=274.6 alt=199.9 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-274.1 absx=274.1 alt=199.9 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-273.2 absx=273.2 alt=200.1 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1468 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-272.8 absx=272.8 alt=200.1 gs=3.88 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-271.9 absx=271.9 alt=200.0 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-271.0 absx=271.0 alt=200.1 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-270.5 absx=270.5 alt=200.2 gs=3.88 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-269.6 absx=269.6 alt=200.2 gs=3.88 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-268.7 absx=268.7 alt=200.3 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-268.3 absx=268.3 alt=200.3 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-267.3 absx=267.3 alt=200.3 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-266.4 absx=266.4 alt=200.2 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-266.0 absx=266.0 alt=200.1 gs=3.88 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-265.1 absx=265.1 alt=199.9 gs=3.88 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1482 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-264.2 absx=264.2 alt=199.7 gs=3.88 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1482 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-263.7 absx=263.7 alt=199.6 gs=3.88 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1478 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-262.8 absx=262.8 alt=199.4 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1482 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-262.4 absx=262.4 alt=199.4 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-261.4 absx=261.4 alt=199.3 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-260.5 absx=260.5 alt=199.3 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-260.1 absx=260.1 alt=199.3 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-259.2 absx=259.2 alt=199.3 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-258.3 absx=258.3 alt=199.3 gs=3.83 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-257.9 absx=257.9 alt=199.3 gs=3.82 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-257.0 absx=257.0 alt=199.3 gs=3.83 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-256.1 absx=256.1 alt=199.4 gs=3.83 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-255.7 absx=255.7 alt=199.5 gs=3.83 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-254.8 absx=254.8 alt=199.5 gs=3.83 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-254.4 absx=254.4 alt=199.5 gs=3.83 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-253.5 absx=253.5 alt=199.5 gs=3.83 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-252.6 absx=252.6 alt=199.5 gs=3.82 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-252.1 absx=252.1 alt=199.5 gs=3.82 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-251.2 absx=251.2 alt=199.6 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-250.3 absx=250.3 alt=199.5 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-249.9 absx=249.9 alt=199.5 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-249.0 absx=249.0 alt=199.6 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-248.5 absx=248.5 alt=199.7 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-247.7 absx=247.7 alt=199.7 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-246.8 absx=246.8 alt=199.9 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-246.3 absx=246.3 alt=200.0 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1469 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-245.4 absx=245.4 alt=200.1 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-244.6 absx=244.6 alt=200.1 gs=3.82 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-244.1 absx=244.1 alt=200.2 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-243.2 absx=243.2 alt=200.2 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-242.3 absx=242.3 alt=200.2 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-241.9 absx=241.9 alt=200.2 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-241.0 absx=241.0 alt=200.1 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-240.1 absx=240.1 alt=200.1 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-239.6 absx=239.6 alt=200.1 gs=3.87 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-238.8 absx=238.8 alt=200.2 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-238.3 absx=238.3 alt=200.2 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-237.4 absx=237.4 alt=200.2 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-236.5 absx=236.5 alt=200.2 gs=3.86 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-236.1 absx=236.1 alt=200.2 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-235.2 absx=235.2 alt=200.0 gs=3.83 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1481 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-234.8 absx=234.8 alt=199.9 gs=3.81 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-233.9 absx=233.9 alt=199.8 gs=3.81 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-233.1 absx=233.1 alt=199.8 gs=3.83 hdg=293.0 thdg=-66.9 herr=0.1 roll=1500 pitch=1418 yaw=1501 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-232.6 absx=232.6 alt=199.8 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-231.7 absx=231.7 alt=199.7 gs=3.83 hdg=293.0 thdg=-66.9 herr=0.1 roll=1500 pitch=1418 yaw=1501 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-231.3 absx=231.3 alt=199.6 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-230.4 absx=230.4 alt=199.5 gs=3.84 hdg=293.0 thdg=-66.9 herr=0.1 roll=1500 pitch=1418 yaw=1501 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-229.5 absx=229.5 alt=199.6 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-229.1 absx=229.1 alt=199.6 gs=3.85 hdg=293.0 thdg=-66.9 herr=0.1 roll=1500 pitch=1418 yaw=1501 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-228.2 absx=228.2 alt=199.7 gs=3.83 hdg=293.0 thdg=-66.9 herr=0.1 roll=1500 pitch=1418 yaw=1501 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-227.8 absx=227.8 alt=199.7 gs=3.83 hdg=293.0 thdg=-66.9 herr=0.1 roll=1500 pitch=1418 yaw=1501 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-226.9 absx=226.9 alt=199.6 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-226.0 absx=226.0 alt=199.6 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-225.5 absx=225.5 alt=199.6 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-224.6 absx=224.6 alt=199.6 gs=3.84 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-224.2 absx=224.2 alt=199.6 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-223.3 absx=223.3 alt=199.7 gs=3.83 hdg=293.0 thdg=-66.9 herr=0.1 roll=1500 pitch=1418 yaw=1501 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-222.4 absx=222.4 alt=199.6 gs=3.85 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-221.9 absx=221.9 alt=199.6 gs=3.83 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-221.0 absx=221.0 alt=199.6 gs=3.82 hdg=292.0 thdg=-66.9 herr=1.1 roll=1505 pitch=1418 yaw=1509 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-220.1 absx=220.1 alt=199.6 gs=3.85 hdg=293.0 thdg=-66.9 herr=0.1 roll=1500 pitch=1418 yaw=1501 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-219.7 absx=219.7 alt=199.5 gs=3.85 hdg=293.0 thdg=-62.9 herr=4.1 roll=1518 pitch=1424 yaw=1536 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-218.8 absx=218.8 alt=199.5 gs=3.83 hdg=293.0 thdg=-62.9 herr=4.1 roll=1518 pitch=1424 yaw=1536 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-218.3 absx=218.3 alt=199.5 gs=3.83 hdg=295.0 thdg=-62.9 herr=2.1 roll=1509 pitch=1424 yaw=1518 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-217.4 absx=217.4 alt=199.5 gs=3.81 hdg=299.0 thdg=-62.9 herr=-1.9 roll=1491 pitch=1424 yaw=1483 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-216.5 absx=216.5 alt=199.4 gs=3.79 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-216.1 absx=216.1 alt=199.3 gs=3.77 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1478 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-215.2 absx=215.2 alt=199.2 gs=3.74 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1480 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-214.4 absx=214.4 alt=199.1 gs=3.72 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-214.0 absx=214.0 alt=199.1 gs=3.71 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-213.1 absx=213.1 alt=199.1 gs=3.68 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-212.3 absx=212.3 alt=199.1 gs=3.66 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-211.8 absx=211.8 alt=199.2 gs=3.68 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-211.0 absx=211.0 alt=199.2 gs=3.68 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-210.6 absx=210.6 alt=199.3 gs=3.68 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-209.7 absx=209.7 alt=199.4 gs=3.67 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-208.8 absx=208.8 alt=199.4 gs=3.65 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-208.4 absx=208.4 alt=199.4 gs=3.64 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-207.6 absx=207.6 alt=199.3 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-206.7 absx=206.7 alt=199.2 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-206.3 absx=206.3 alt=199.1 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-205.5 absx=205.5 alt=198.8 gs=3.63 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1487 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-205.1 absx=205.1 alt=198.7 gs=3.64 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1482 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-204.2 absx=204.2 alt=198.6 gs=3.64 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1483 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-203.4 absx=203.4 alt=198.4 gs=3.63 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1482 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-202.9 absx=202.9 alt=198.4 gs=3.63 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1480 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-202.1 absx=202.1 alt=198.3 gs=3.64 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1482 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-201.2 absx=201.2 alt=198.2 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1481 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-200.8 absx=200.8 alt=198.2 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-200.0 absx=200.0 alt=198.2 gs=3.63 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-199.6 absx=199.6 alt=198.2 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-198.7 absx=198.7 alt=198.2 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-197.9 absx=197.9 alt=198.3 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-197.5 absx=197.5 alt=198.4 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-196.6 absx=196.6 alt=198.6 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-195.8 absx=195.8 alt=198.8 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-195.3 absx=195.3 alt=198.8 gs=3.63 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-194.5 absx=194.5 alt=199.0 gs=3.63 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-194.1 absx=194.1 alt=199.0 gs=3.59 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-193.3 absx=193.3 alt=199.1 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-192.4 absx=192.4 alt=199.1 gs=3.59 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-192.0 absx=192.0 alt=199.1 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-191.2 absx=191.2 alt=199.1 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-190.8 absx=190.8 alt=199.1 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-190.0 absx=190.0 alt=199.2 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-189.2 absx=189.2 alt=199.2 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-188.8 absx=188.8 alt=199.1 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-188.0 absx=188.0 alt=199.1 gs=3.53 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-187.6 absx=187.6 alt=199.0 gs=3.55 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-186.8 absx=186.8 alt=199.0 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-186.0 absx=186.0 alt=198.9 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-185.6 absx=185.6 alt=198.9 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-184.8 absx=184.8 alt=199.0 gs=3.59 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-184.0 absx=184.0 alt=199.0 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-183.5 absx=183.5 alt=199.1 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-182.7 absx=182.7 alt=199.1 gs=3.59 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-182.3 absx=182.3 alt=199.1 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-181.5 absx=181.5 alt=199.1 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-180.6 absx=180.6 alt=199.1 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-180.2 absx=180.2 alt=199.1 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-179.4 absx=179.4 alt=199.1 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-179.0 absx=179.0 alt=199.1 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-178.2 absx=178.2 alt=198.9 gs=3.59 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1481 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-177.4 absx=177.4 alt=198.8 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1482 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-176.9 absx=176.9 alt=198.8 gs=3.56 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1478 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-176.1 absx=176.1 alt=198.7 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-175.3 absx=175.3 alt=198.7 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-174.9 absx=174.9 alt=198.7 gs=3.56 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-174.1 absx=174.1 alt=198.7 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-173.6 absx=173.6 alt=198.7 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-172.8 absx=172.8 alt=198.5 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1485 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-172.4 absx=172.4 alt=198.4 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1482 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-171.5 absx=171.5 alt=198.3 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1482 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-170.7 absx=170.7 alt=198.3 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-169.8 absx=169.8 alt=198.4 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-169.4 absx=169.4 alt=198.4 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1478 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-168.6 absx=168.6 alt=198.4 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1480 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-167.8 absx=167.8 alt=198.4 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-167.3 absx=167.3 alt=198.4 gs=3.59 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-166.5 absx=166.5 alt=198.5 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-166.1 absx=166.1 alt=198.5 gs=3.59 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-165.3 absx=165.3 alt=198.6 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-164.4 absx=164.4 alt=198.8 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-164.0 absx=164.0 alt=198.8 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-163.2 absx=163.2 alt=198.8 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-162.8 absx=162.8 alt=198.8 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-161.9 absx=161.9 alt=198.8 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-161.1 absx=161.1 alt=198.7 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1483 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-160.7 absx=160.7 alt=198.6 gs=3.59 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1480 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-159.8 absx=159.8 alt=198.5 gs=3.59 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1482 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-159.0 absx=159.0 alt=198.3 gs=3.59 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1484 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-158.6 absx=158.6 alt=198.3 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-157.8 absx=157.8 alt=198.3 gs=3.59 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-157.3 absx=157.3 alt=198.2 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1480 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-156.5 absx=156.5 alt=198.0 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1486 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-155.7 absx=155.7 alt=197.9 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1484 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-155.3 absx=155.3 alt=197.9 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1480 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-154.5 absx=154.5 alt=197.8 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1481 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-154.1 absx=154.1 alt=197.8 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1480 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-153.2 absx=153.2 alt=197.8 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1480 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-152.4 absx=152.4 alt=197.8 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-152.0 absx=152.0 alt=197.8 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-151.1 absx=151.1 alt=197.8 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-150.7 absx=150.7 alt=197.8 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-149.9 absx=149.9 alt=197.8 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-149.1 absx=149.1 alt=197.8 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1481 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-148.6 absx=148.6 alt=197.8 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1480 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-147.8 absx=147.8 alt=197.8 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-147.4 absx=147.4 alt=197.7 gs=3.61 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-146.5 absx=146.5 alt=197.8 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-145.7 absx=145.7 alt=197.9 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-145.2 absx=145.2 alt=197.9 gs=3.60 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-144.4 absx=144.4 alt=197.9 gs=3.62 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-143.5 absx=143.5 alt=198.0 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-143.1 absx=143.1 alt=198.0 gs=3.58 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-142.3 absx=142.3 alt=198.1 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-141.9 absx=141.9 alt=198.1 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-141.1 absx=141.1 alt=198.2 gs=3.57 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-140.3 absx=140.3 alt=198.4 gs=3.56 hdg=298.0 thdg=-62.9 herr=-0.9 roll=1496 pitch=1424 yaw=1492 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-139.9 absx=139.9 alt=198.4 gs=3.57 hdg=298.0 thdg=-56.9 herr=5.1 roll=1523 pitch=1436 yaw=1545 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-139.0 absx=139.0 alt=198.4 gs=3.57 hdg=299.0 thdg=-56.9 herr=4.1 roll=1518 pitch=1436 yaw=1536 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-138.2 absx=138.2 alt=198.4 gs=3.51 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-137.8 absx=137.8 alt=198.4 gs=3.49 hdg=306.0 thdg=-56.9 herr=-2.9 roll=1487 pitch=1436 yaw=1474 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-137.1 absx=137.1 alt=198.6 gs=3.46 hdg=305.0 thdg=-56.9 herr=-1.9 roll=1491 pitch=1436 yaw=1483 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-136.7 absx=136.7 alt=198.7 gs=3.45 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-135.9 absx=135.9 alt=198.7 gs=3.43 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-135.2 absx=135.2 alt=198.9 gs=3.41 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-134.8 absx=134.8 alt=199.1 gs=3.40 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1470 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-134.1 absx=134.1 alt=199.4 gs=3.37 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1463 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-133.4 absx=133.4 alt=199.5 gs=3.37 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-133.0 absx=133.0 alt=199.4 gs=3.36 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-132.3 absx=132.3 alt=199.3 gs=3.34 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1480 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-132.0 absx=132.0 alt=199.2 gs=3.33 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1478 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-131.3 absx=131.3 alt=199.1 gs=3.31 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-130.6 absx=130.6 alt=199.1 gs=3.31 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-130.3 absx=130.3 alt=199.1 gs=3.31 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-129.6 absx=129.6 alt=199.2 gs=3.30 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-129.3 absx=129.3 alt=199.2 gs=3.31 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-128.6 absx=128.6 alt=199.4 gs=3.31 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-128.0 absx=128.0 alt=199.5 gs=3.32 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-127.6 absx=127.6 alt=199.6 gs=3.30 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-127.0 absx=127.0 alt=199.7 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-126.6 absx=126.6 alt=199.7 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-125.9 absx=125.9 alt=199.8 gs=3.28 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-125.3 absx=125.3 alt=199.9 gs=3.28 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-124.9 absx=124.9 alt=200.0 gs=3.30 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-124.2 absx=124.2 alt=200.2 gs=3.30 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-123.6 absx=123.6 alt=200.3 gs=3.30 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-123.2 absx=123.2 alt=200.4 gs=3.32 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1469 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-122.6 absx=122.6 alt=200.6 gs=3.30 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1465 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-121.9 absx=121.9 alt=200.7 gs=3.31 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1468 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-121.5 absx=121.5 alt=200.6 gs=3.30 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-120.9 absx=120.9 alt=200.6 gs=3.27 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-120.2 absx=120.2 alt=200.6 gs=3.27 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-119.9 absx=119.9 alt=200.6 gs=3.27 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-119.3 absx=119.3 alt=200.6 gs=3.28 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-118.9 absx=118.9 alt=200.6 gs=3.28 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-118.3 absx=118.3 alt=200.6 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-117.6 absx=117.6 alt=200.6 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-117.3 absx=117.3 alt=200.5 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-116.7 absx=116.7 alt=200.5 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-116.3 absx=116.3 alt=200.4 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-115.7 absx=115.7 alt=200.5 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-115.0 absx=115.0 alt=200.4 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-114.7 absx=114.7 alt=200.4 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-114.0 absx=114.0 alt=200.4 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-113.7 absx=113.7 alt=200.4 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-113.1 absx=113.1 alt=200.5 gs=3.27 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-112.4 absx=112.4 alt=200.3 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-112.1 absx=112.1 alt=200.2 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-111.5 absx=111.5 alt=200.1 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-110.8 absx=110.8 alt=200.0 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1480 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-110.5 absx=110.5 alt=199.9 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-109.9 absx=109.9 alt=199.8 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1478 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-109.5 absx=109.5 alt=199.8 gs=3.27 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-108.9 absx=108.9 alt=199.8 gs=3.28 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-108.3 absx=108.3 alt=200.0 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-107.9 absx=107.9 alt=200.1 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1470 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-107.3 absx=107.3 alt=200.3 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1465 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-106.6 absx=106.6 alt=200.4 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1465 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-106.3 absx=106.3 alt=200.5 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-105.6 absx=105.6 alt=200.5 gs=3.27 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-105.3 absx=105.3 alt=200.6 gs=3.28 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1470 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-104.7 absx=104.7 alt=200.7 gs=3.31 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-104.0 absx=104.0 alt=200.8 gs=3.30 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-103.7 absx=103.7 alt=200.8 gs=3.28 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-103.0 absx=103.0 alt=200.7 gs=3.24 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-102.7 absx=102.7 alt=200.8 gs=3.24 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-102.1 absx=102.1 alt=200.7 gs=3.24 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-101.4 absx=101.4 alt=200.7 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-101.1 absx=101.1 alt=200.7 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-100.5 absx=100.5 alt=200.7 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-99.8 absx=99.8 alt=200.8 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-99.5 absx=99.5 alt=200.8 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1469 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-98.8 absx=98.8 alt=201.0 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1464 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-98.5 absx=98.5 alt=201.1 gs=3.23 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1465 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-97.8 absx=97.8 alt=201.3 gs=3.23 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1462 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-97.2 absx=97.2 alt=201.5 gs=3.23 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1462 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-96.9 absx=96.9 alt=201.6 gs=3.23 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-96.2 absx=96.2 alt=201.7 gs=3.21 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1465 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-95.9 absx=95.9 alt=201.7 gs=3.22 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1468 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-95.3 absx=95.3 alt=201.8 gs=3.23 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1466 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-94.6 absx=94.6 alt=201.9 gs=3.23 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1466 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-94.3 absx=94.3 alt=201.9 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-93.7 absx=93.7 alt=201.9 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1470 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-93.0 absx=93.0 alt=201.7 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-92.7 absx=92.7 alt=201.6 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-92.0 absx=92.0 alt=201.5 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-91.7 absx=91.7 alt=201.5 gs=3.27 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-91.1 absx=91.1 alt=201.5 gs=3.27 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-90.4 absx=90.4 alt=201.6 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-90.1 absx=90.1 alt=201.6 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1468 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-89.5 absx=89.5 alt=201.7 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1465 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-89.2 absx=89.2 alt=201.8 gs=3.27 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-88.6 absx=88.6 alt=201.9 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1465 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-87.9 absx=87.9 alt=201.9 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1466 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-87.6 absx=87.6 alt=202.0 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-87.0 absx=87.0 alt=202.1 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1464 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-86.7 absx=86.7 alt=202.1 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-86.1 absx=86.1 alt=202.1 gs=3.26 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1467 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-85.4 absx=85.4 alt=202.1 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1469 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-85.1 absx=85.1 alt=202.1 gs=3.28 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1471 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-84.5 absx=84.5 alt=202.0 gs=3.25 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-83.9 absx=83.9 alt=201.9 gs=3.24 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-83.6 absx=83.6 alt=201.8 gs=3.23 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1472 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-83.0 absx=83.0 alt=201.6 gs=3.24 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-82.7 absx=82.7 alt=201.5 gs=3.24 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-82.1 absx=82.1 alt=201.4 gs=3.22 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-81.5 absx=81.5 alt=201.2 gs=3.22 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-81.1 absx=81.1 alt=201.1 gs=3.23 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-80.5 absx=80.5 alt=200.9 gs=3.24 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1436 yaw=1492 thr=1480 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-79.9 absx=79.9 alt=200.7 gs=3.23 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-79.6 absx=79.6 alt=200.6 gs=3.24 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-79.0 absx=79.0 alt=200.5 gs=3.22 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-78.7 absx=78.7 alt=200.5 gs=3.21 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-78.1 absx=78.1 alt=200.3 gs=3.18 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-77.5 absx=77.5 alt=200.2 gs=3.16 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-77.3 absx=77.3 alt=200.1 gs=3.16 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-76.8 absx=76.8 alt=200.0 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-76.2 absx=76.2 alt=199.9 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1477 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-76.0 absx=76.0 alt=199.9 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1473 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-75.5 absx=75.5 alt=199.9 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1472 nprog=2
+[CAPTURE_LINE/CAPTURE] xtrack=-75.3 absx=75.3 alt=200.0 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1471 nprog=3
+[CAPTURE_LINE/CAPTURE] xtrack=-74.8 absx=74.8 alt=200.1 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1468 nprog=4
+[CAPTURE_LINE/CAPTURE] xtrack=-74.4 absx=74.4 alt=200.2 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1469 nprog=5
+[CAPTURE_LINE/CAPTURE] xtrack=-74.1 absx=74.1 alt=200.3 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1471 nprog=6
+[CAPTURE_LINE/CAPTURE] xtrack=-73.7 absx=73.7 alt=200.3 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1473 nprog=7
+[CAPTURE_LINE/CAPTURE] xtrack=-73.5 absx=73.5 alt=200.2 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=8
+[CAPTURE_LINE/CAPTURE] xtrack=-73.0 absx=73.0 alt=200.1 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1480 nprog=9
+[CAPTURE_LINE/CAPTURE] xtrack=-72.6 absx=72.6 alt=200.0 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1476 nprog=10
+[CAPTURE_LINE/CAPTURE] xtrack=-72.4 absx=72.4 alt=200.0 gs=3.06 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=11
+[CAPTURE_LINE/CAPTURE] xtrack=-72.0 absx=72.0 alt=200.0 gs=3.05 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=12
+[CAPTURE_LINE/CAPTURE] xtrack=-71.7 absx=71.7 alt=200.0 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=13
+[CAPTURE_LINE/CAPTURE] xtrack=-71.3 absx=71.3 alt=200.0 gs=3.04 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1475 nprog=14
+[CAPTURE_LINE/CAPTURE] xtrack=-70.9 absx=70.9 alt=199.8 gs=3.06 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1479 nprog=15
+[CAPTURE_LINE/CAPTURE] xtrack=-70.6 absx=70.6 alt=199.8 gs=3.06 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1475 nprog=16
+[CAPTURE_LINE/CAPTURE] xtrack=-70.2 absx=70.2 alt=199.8 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1476 nprog=17
+[CAPTURE_LINE/CAPTURE] xtrack=-69.7 absx=69.7 alt=199.6 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1479 nprog=18
+[CAPTURE_LINE/CAPTURE] xtrack=-69.5 absx=69.5 alt=199.6 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1477 nprog=19
+[CAPTURE_LINE/CAPTURE] xtrack=-69.0 absx=69.0 alt=199.6 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1476 nprog=20
+[CAPTURE_LINE/CAPTURE] xtrack=-68.8 absx=68.8 alt=199.6 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1474 nprog=21
+[CAPTURE_LINE/CAPTURE] xtrack=-68.3 absx=68.3 alt=199.6 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1473 nprog=22
+[CAPTURE_LINE/CAPTURE] xtrack=-67.9 absx=67.9 alt=199.7 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1472 nprog=23
+[CAPTURE_LINE/CAPTURE] xtrack=-67.6 absx=67.6 alt=199.7 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1474 nprog=24
+[CAPTURE_LINE/CAPTURE] xtrack=-67.1 absx=67.1 alt=199.6 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1476 nprog=25
+[CAPTURE_LINE/CAPTURE] xtrack=-66.6 absx=66.6 alt=199.6 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-66.4 absx=66.4 alt=199.6 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-65.9 absx=65.9 alt=199.6 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1477 nprog=2
+[CAPTURE_LINE/CAPTURE] xtrack=-65.6 absx=65.6 alt=199.5 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1476 nprog=3
+[CAPTURE_LINE/CAPTURE] xtrack=-65.1 absx=65.1 alt=199.5 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1477 nprog=4
+[CAPTURE_LINE/CAPTURE] xtrack=-64.7 absx=64.7 alt=199.4 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1478 nprog=5
+[CAPTURE_LINE/CAPTURE] xtrack=-64.5 absx=64.5 alt=199.4 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=6
+[CAPTURE_LINE/CAPTURE] xtrack=-64.0 absx=64.0 alt=199.5 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1471 nprog=7
+[CAPTURE_LINE/CAPTURE] xtrack=-63.6 absx=63.6 alt=199.6 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1471 nprog=8
+[CAPTURE_LINE/CAPTURE] xtrack=-63.4 absx=63.4 alt=199.6 gs=3.06 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=9
+[CAPTURE_LINE/CAPTURE] xtrack=-63.0 absx=63.0 alt=199.7 gs=3.06 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1472 nprog=10
+[CAPTURE_LINE/CAPTURE] xtrack=-62.8 absx=62.8 alt=199.7 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=11
+[CAPTURE_LINE/CAPTURE] xtrack=-62.3 absx=62.3 alt=199.7 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=12
+[CAPTURE_LINE/CAPTURE] xtrack=-61.9 absx=61.9 alt=199.7 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=13
+[CAPTURE_LINE/CAPTURE] xtrack=-61.7 absx=61.7 alt=199.7 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1475 nprog=14
+[CAPTURE_LINE/CAPTURE] xtrack=-61.3 absx=61.3 alt=199.7 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=15
+[CAPTURE_LINE/CAPTURE] xtrack=-61.0 absx=61.0 alt=199.7 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1475 nprog=16
+[CAPTURE_LINE/CAPTURE] xtrack=-60.6 absx=60.6 alt=199.7 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=17
+[CAPTURE_LINE/CAPTURE] xtrack=-60.2 absx=60.2 alt=199.7 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=18
+[CAPTURE_LINE/CAPTURE] xtrack=-59.9 absx=59.9 alt=199.7 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1475 nprog=19
+[CAPTURE_LINE/CAPTURE] xtrack=-59.5 absx=59.5 alt=199.6 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1479 nprog=20
+[CAPTURE_LINE/CAPTURE] xtrack=-59.1 absx=59.1 alt=199.4 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1483 nprog=21
+[CAPTURE_LINE/CAPTURE] xtrack=-58.8 absx=58.8 alt=199.3 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1479 nprog=22
+[CAPTURE_LINE/CAPTURE] xtrack=-58.4 absx=58.4 alt=199.1 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1481 nprog=23
+[CAPTURE_LINE/CAPTURE] xtrack=-57.9 absx=57.9 alt=199.0 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1480 nprog=24
+[CAPTURE_LINE/CAPTURE] xtrack=-57.7 absx=57.7 alt=199.0 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1477 nprog=25
+[CAPTURE_LINE/CAPTURE] xtrack=-57.2 absx=57.2 alt=199.0 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1477 nprog=26
+[CAPTURE_LINE/CAPTURE] xtrack=-57.0 absx=57.0 alt=198.9 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1477 nprog=27
+[CAPTURE_LINE/CAPTURE] xtrack=-56.5 absx=56.5 alt=198.9 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1478 nprog=28
+[CAPTURE_LINE/CAPTURE] xtrack=-56.3 absx=56.3 alt=198.9 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1477 nprog=29
+[CAPTURE_LINE/CAPTURE] xtrack=-55.8 absx=55.8 alt=198.9 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1476 nprog=30
+[CAPTURE_LINE/CAPTURE] xtrack=-55.3 absx=55.3 alt=198.9 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1474 nprog=31
+[CAPTURE_LINE/CAPTURE] xtrack=-54.8 absx=54.8 alt=199.1 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1471 nprog=32
+[CAPTURE_LINE/CAPTURE] xtrack=-54.5 absx=54.5 alt=199.1 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1474 nprog=33
+[CAPTURE_LINE/CAPTURE] xtrack=-54.0 absx=54.0 alt=199.2 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1473 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-53.8 absx=53.8 alt=199.2 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-53.2 absx=53.2 alt=199.3 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1471 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-52.8 absx=52.8 alt=199.5 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1467 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-52.5 absx=52.5 alt=199.6 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1470 nprog=2
+[CAPTURE_LINE/CAPTURE] xtrack=-52.1 absx=52.1 alt=199.9 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1465 nprog=3
+[CAPTURE_LINE/CAPTURE] xtrack=-51.6 absx=51.6 alt=200.0 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1467 nprog=4
+[CAPTURE_LINE/CAPTURE] xtrack=-51.4 absx=51.4 alt=200.1 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1472 nprog=5
+[CAPTURE_LINE/CAPTURE] xtrack=-50.9 absx=50.9 alt=200.1 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1471 nprog=6
+[CAPTURE_LINE/CAPTURE] xtrack=-50.7 absx=50.7 alt=200.1 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1473 nprog=7
+[CAPTURE_LINE/CAPTURE] xtrack=-50.3 absx=50.3 alt=200.1 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=8
+[CAPTURE_LINE/CAPTURE] xtrack=-49.8 absx=49.8 alt=200.1 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=9
+[CAPTURE_LINE/CAPTURE] xtrack=-49.6 absx=49.6 alt=200.0 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=10
+[CAPTURE_LINE/CAPTURE] xtrack=-49.2 absx=49.2 alt=200.1 gs=3.05 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1472 nprog=11
+[CAPTURE_LINE/CAPTURE] xtrack=-48.8 absx=48.8 alt=200.1 gs=3.06 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=12
+[CAPTURE_LINE/CAPTURE] xtrack=-48.6 absx=48.6 alt=200.1 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=13
+[CAPTURE_LINE/CAPTURE] xtrack=-48.1 absx=48.1 alt=200.1 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1472 nprog=14
+[CAPTURE_LINE/CAPTURE] xtrack=-47.9 absx=47.9 alt=200.1 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1472 nprog=15
+[CAPTURE_LINE/CAPTURE] xtrack=-47.5 absx=47.5 alt=200.3 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1468 nprog=16
+[CAPTURE_LINE/CAPTURE] xtrack=-47.0 absx=47.0 alt=200.3 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1471 nprog=17
+[CAPTURE_LINE/CAPTURE] xtrack=-46.8 absx=46.8 alt=200.3 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=18
+[CAPTURE_LINE/CAPTURE] xtrack=-46.4 absx=46.4 alt=200.3 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=19
+[CAPTURE_LINE/CAPTURE] xtrack=-46.1 absx=46.1 alt=200.3 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1472 nprog=20
+[CAPTURE_LINE/CAPTURE] xtrack=-45.7 absx=45.7 alt=200.4 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1471 nprog=21
+[CAPTURE_LINE/CAPTURE] xtrack=-45.2 absx=45.2 alt=200.4 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1470 nprog=22
+[CAPTURE_LINE/CAPTURE] xtrack=-45.0 absx=45.0 alt=200.5 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1471 nprog=23
+[CAPTURE_LINE/CAPTURE] xtrack=-44.6 absx=44.6 alt=200.5 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1472 nprog=24
+[CAPTURE_LINE/CAPTURE] xtrack=-44.3 absx=44.3 alt=200.5 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1473 nprog=25
+[CAPTURE_LINE/CAPTURE] xtrack=-43.9 absx=43.9 alt=200.5 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1472 nprog=26
+[CAPTURE_LINE/CAPTURE] xtrack=-43.4 absx=43.4 alt=200.4 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1473 nprog=27
+[CAPTURE_LINE/CAPTURE] xtrack=-43.1 absx=43.1 alt=200.4 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1473 nprog=28
+[CAPTURE_LINE/CAPTURE] xtrack=-42.6 absx=42.6 alt=200.3 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1477 nprog=29
+[CAPTURE_LINE/CAPTURE] xtrack=-42.1 absx=42.1 alt=200.2 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1479 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-41.9 absx=41.9 alt=200.1 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-41.4 absx=41.4 alt=199.9 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1481 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-41.1 absx=41.1 alt=199.8 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1477 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-40.6 absx=40.6 alt=199.8 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1477 nprog=2
+[CAPTURE_LINE/CAPTURE] xtrack=-40.1 absx=40.1 alt=199.7 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1479 nprog=3
+[CAPTURE_LINE/CAPTURE] xtrack=-39.9 absx=39.9 alt=199.6 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1478 nprog=4
+[CAPTURE_LINE/CAPTURE] xtrack=-39.5 absx=39.5 alt=199.4 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1481 nprog=5
+[CAPTURE_LINE/CAPTURE] xtrack=-39.2 absx=39.2 alt=199.4 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1477 nprog=6
+[CAPTURE_LINE/CAPTURE] xtrack=-38.8 absx=38.8 alt=199.3 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1477 nprog=7
+[CAPTURE_LINE/CAPTURE] xtrack=-38.4 absx=38.4 alt=199.3 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1476 nprog=8
+[CAPTURE_LINE/CAPTURE] xtrack=-38.2 absx=38.2 alt=199.3 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1477 nprog=9
+[CAPTURE_LINE/CAPTURE] xtrack=-37.7 absx=37.7 alt=199.2 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1478 nprog=10
+[CAPTURE_LINE/CAPTURE] xtrack=-37.3 absx=37.3 alt=199.2 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1476 nprog=11
+[CAPTURE_LINE/CAPTURE] xtrack=-37.1 absx=37.1 alt=199.2 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1475 nprog=12
+[CAPTURE_LINE/CAPTURE] xtrack=-36.6 absx=36.6 alt=199.2 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1475 nprog=13
+[CAPTURE_LINE/CAPTURE] xtrack=-36.4 absx=36.4 alt=199.2 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1475 nprog=14
+[CAPTURE_LINE/CAPTURE] xtrack=-36.0 absx=36.0 alt=199.2 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1475 nprog=15
+[CAPTURE_LINE/CAPTURE] xtrack=-35.5 absx=35.5 alt=199.3 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=16
+[CAPTURE_LINE/CAPTURE] xtrack=-35.3 absx=35.3 alt=199.3 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1476 nprog=17
+[CAPTURE_LINE/CAPTURE] xtrack=-34.8 absx=34.8 alt=199.3 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=18
+[CAPTURE_LINE/CAPTURE] xtrack=-34.6 absx=34.6 alt=199.4 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=19
+[CAPTURE_LINE/CAPTURE] xtrack=-34.1 absx=34.1 alt=199.6 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1467 nprog=20
+[CAPTURE_LINE/CAPTURE] xtrack=-33.6 absx=33.6 alt=199.8 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1464 nprog=21
+[CAPTURE_LINE/CAPTURE] xtrack=-33.4 absx=33.4 alt=199.9 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1470 nprog=22
+[CAPTURE_LINE/CAPTURE] xtrack=-32.9 absx=32.9 alt=200.0 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1471 nprog=23
+[CAPTURE_LINE/CAPTURE] xtrack=-32.4 absx=32.4 alt=200.0 gs=3.17 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1472 nprog=24
+[CAPTURE_LINE/CAPTURE] xtrack=-32.2 absx=32.2 alt=200.0 gs=3.17 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1474 nprog=25
+[CAPTURE_LINE/CAPTURE] xtrack=-31.6 absx=31.6 alt=200.0 gs=3.17 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-31.4 absx=31.4 alt=200.0 gs=3.17 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-30.9 absx=30.9 alt=199.9 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-30.4 absx=30.4 alt=199.8 gs=3.17 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1480 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-30.2 absx=30.2 alt=199.7 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=2
+[CAPTURE_LINE/CAPTURE] xtrack=-29.7 absx=29.7 alt=199.7 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1477 nprog=3
+[CAPTURE_LINE/CAPTURE] xtrack=-29.2 absx=29.2 alt=199.6 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1476 nprog=4
+[CAPTURE_LINE/CAPTURE] xtrack=-29.0 absx=29.0 alt=199.7 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=5
+[CAPTURE_LINE/CAPTURE] xtrack=-28.5 absx=28.5 alt=199.7 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1472 nprog=6
+[CAPTURE_LINE/CAPTURE] xtrack=-28.3 absx=28.3 alt=199.7 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1473 nprog=7
+[CAPTURE_LINE/CAPTURE] xtrack=-27.9 absx=27.9 alt=199.8 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1471 nprog=8
+[CAPTURE_LINE/CAPTURE] xtrack=-27.7 absx=27.7 alt=199.9 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1471 nprog=9
+[CAPTURE_LINE/CAPTURE] xtrack=-27.2 absx=27.2 alt=200.0 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1470 nprog=10
+[CAPTURE_LINE/CAPTURE] xtrack=-26.8 absx=26.8 alt=200.0 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=11
+[CAPTURE_LINE/CAPTURE] xtrack=-26.6 absx=26.6 alt=200.0 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=12
+[CAPTURE_LINE/CAPTURE] xtrack=-26.1 absx=26.1 alt=200.0 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1471 nprog=13
+[CAPTURE_LINE/CAPTURE] xtrack=-25.7 absx=25.7 alt=200.2 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1469 nprog=14
+[CAPTURE_LINE/CAPTURE] xtrack=-25.5 absx=25.5 alt=200.2 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1472 nprog=15
+[CAPTURE_LINE/CAPTURE] xtrack=-25.0 absx=25.0 alt=200.2 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=16
+[CAPTURE_LINE/CAPTURE] xtrack=-24.8 absx=24.8 alt=200.2 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=17
+[CAPTURE_LINE/CAPTURE] xtrack=-24.3 absx=24.3 alt=200.1 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1475 nprog=18
+[CAPTURE_LINE/CAPTURE] xtrack=-23.9 absx=23.9 alt=200.1 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=19
+[CAPTURE_LINE/CAPTURE] xtrack=-23.6 absx=23.6 alt=200.1 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=20
+[CAPTURE_LINE/CAPTURE] xtrack=-23.2 absx=23.2 alt=200.1 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1474 nprog=21
+[CAPTURE_LINE/CAPTURE] xtrack=-22.7 absx=22.7 alt=200.1 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1473 nprog=22
+[CAPTURE_LINE/CAPTURE] xtrack=-22.2 absx=22.2 alt=200.1 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1472 nprog=23
+[CAPTURE_LINE/CAPTURE] xtrack=-22.0 absx=22.0 alt=200.1 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1473 nprog=24
+[CAPTURE_LINE/CAPTURE] xtrack=-21.5 absx=21.5 alt=200.1 gs=3.16 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1474 nprog=25
+[CAPTURE_LINE/CAPTURE] xtrack=-21.2 absx=21.2 alt=200.1 gs=3.16 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1474 nprog=26
+[CAPTURE_LINE/CAPTURE] xtrack=-20.7 absx=20.7 alt=200.1 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1474 nprog=27
+[CAPTURE_LINE/CAPTURE] xtrack=-20.5 absx=20.5 alt=200.0 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1475 nprog=28
+[CAPTURE_LINE/CAPTURE] xtrack=-20.0 absx=20.0 alt=200.0 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1476 nprog=29
+[CAPTURE_LINE/CAPTURE] xtrack=-19.5 absx=19.5 alt=199.9 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-19.2 absx=19.2 alt=199.9 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-18.7 absx=18.7 alt=200.0 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1472 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-18.2 absx=18.2 alt=200.0 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-18.0 absx=18.0 alt=199.9 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-17.5 absx=17.5 alt=199.9 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1476 nprog=2
+[CAPTURE_LINE/CAPTURE] xtrack=-17.3 absx=17.3 alt=199.8 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1477 nprog=3
+[CAPTURE_LINE/CAPTURE] xtrack=-16.8 absx=16.8 alt=199.7 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1480 nprog=4
+[CAPTURE_LINE/CAPTURE] xtrack=-16.4 absx=16.4 alt=199.6 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1478 nprog=5
+[CAPTURE_LINE/CAPTURE] xtrack=-16.1 absx=16.1 alt=199.6 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=6
+[CAPTURE_LINE/CAPTURE] xtrack=-15.7 absx=15.7 alt=199.7 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1472 nprog=7
+[CAPTURE_LINE/CAPTURE] xtrack=-15.5 absx=15.5 alt=199.6 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=8
+[CAPTURE_LINE/CAPTURE] xtrack=-15.0 absx=15.0 alt=199.6 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1477 nprog=9
+[CAPTURE_LINE/CAPTURE] xtrack=-14.6 absx=14.6 alt=199.6 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=10
+[CAPTURE_LINE/CAPTURE] xtrack=-14.4 absx=14.4 alt=199.6 gs=3.09 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1473 nprog=11
+[CAPTURE_LINE/CAPTURE] xtrack=-14.0 absx=14.0 alt=199.6 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1474 nprog=12
+[CAPTURE_LINE/CAPTURE] xtrack=-13.7 absx=13.7 alt=199.6 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1475 nprog=13
+[CAPTURE_LINE/CAPTURE] xtrack=-13.3 absx=13.3 alt=199.7 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1471 nprog=14
+[CAPTURE_LINE/CAPTURE] xtrack=-12.9 absx=12.9 alt=199.6 gs=3.04 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1478 nprog=15
+[CAPTURE_LINE/CAPTURE] xtrack=-12.7 absx=12.7 alt=199.5 gs=3.04 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1478 nprog=16
+[CAPTURE_LINE/CAPTURE] xtrack=-12.2 absx=12.2 alt=199.4 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1478 nprog=17
+[CAPTURE_LINE/CAPTURE] xtrack=-11.8 absx=11.8 alt=199.4 gs=3.07 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1476 nprog=18
+[CAPTURE_LINE/CAPTURE] xtrack=-11.6 absx=11.6 alt=199.4 gs=3.08 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1476 nprog=19
+[CAPTURE_LINE/CAPTURE] xtrack=-11.1 absx=11.1 alt=199.4 gs=3.10 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1446 yaw=1492 thr=1476 nprog=20
+[CAPTURE_LINE/CAPTURE] xtrack=-10.7 absx=10.7 alt=199.2 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1482 nprog=21
+[CAPTURE_LINE/CAPTURE] xtrack=-10.5 absx=10.5 alt=199.1 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1480 nprog=22
+[CAPTURE_LINE/CAPTURE] xtrack=-10.0 absx=10.0 alt=198.9 gs=3.12 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1484 nprog=23
+[CAPTURE_LINE/CAPTURE] xtrack=-9.8 absx=9.8 alt=198.8 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1480 nprog=24
+[CAPTURE_LINE/CAPTURE] xtrack=-9.3 absx=9.3 alt=198.8 gs=3.13 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1476 nprog=25
+[CAPTURE_LINE/CAPTURE] xtrack=-8.8 absx=8.8 alt=198.9 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1474 nprog=26
+[CAPTURE_LINE/CAPTURE] xtrack=-8.6 absx=8.6 alt=198.9 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1442 yaw=1492 thr=1475 nprog=27
+[CAPTURE_LINE/CAPTURE] xtrack=-8.1 absx=8.1 alt=199.0 gs=3.16 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1474 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-7.8 absx=7.8 alt=199.0 gs=3.15 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1476 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-7.3 absx=7.3 alt=199.0 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1476 nprog=0
+[CAPTURE_LINE/CAPTURE] xtrack=-6.8 absx=6.8 alt=199.0 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=1
+[CAPTURE_LINE/CAPTURE] xtrack=-6.6 absx=6.6 alt=199.0 gs=3.14 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1476 nprog=2
+[CAPTURE_LINE/CAPTURE] xtrack=-6.1 absx=6.1 alt=199.0 gs=3.11 hdg=304.0 thdg=-56.9 herr=-0.9 roll=1496 pitch=1450 yaw=1492 thr=1475 nprog=3
+[CAPTURE_LINE] line captured -> CRUISE
+[WIND_CRUISE] toB=252.6 alt=199.0/165.0 gs=3.11 cls=2.99 latv=0.85 hdg=304.0 thdg=-146.9 herr=-90.9
+[WIND_CRUISE] toB=251.9 alt=199.0/165.0 gs=3.09 cls=2.97 latv=0.82 hdg=304.0 thdg=-146.9 herr=-90.9
+[WIND_CRUISE] toB=250.4 alt=198.3/165.0 gs=3.15 cls=3.05 latv=0.80 hdg=295.0 thdg=-146.9 herr=-81.9
+[WIND_CRUISE] toB=248.8 alt=197.2/165.0 gs=3.24 cls=3.14 latv=0.78 hdg=285.0 thdg=-146.9 herr=-71.9
+[WIND_CRUISE] toB=248.0 alt=196.5/165.0 gs=3.28 cls=3.20 latv=0.76 hdg=280.0 thdg=-146.9 herr=-66.9
+[WIND_CRUISE] toB=246.4 alt=195.0/165.0 gs=3.38 cls=3.31 latv=0.70 hdg=272.0 thdg=-146.9 herr=-58.9
+[WIND_CRUISE] toB=245.6 alt=194.3/165.0 gs=3.42 cls=3.36 latv=0.67 hdg=267.0 thdg=-146.9 herr=-53.9
+[WIND_CRUISE] toB=243.9 alt=192.8/165.0 gs=3.52 cls=3.47 latv=0.59 hdg=258.0 thdg=-146.9 herr=-44.9
+[WIND_CRUISE] toB=242.1 alt=191.3/165.0 gs=3.61 cls=3.57 latv=0.49 hdg=249.0 thdg=-146.9 herr=-35.9
+[WIND_CRUISE] toB=241.2 alt=190.6/165.0 gs=3.65 cls=3.62 latv=0.45 hdg=245.0 thdg=-146.9 herr=-31.9
+[WIND_CRUISE] toB=239.4 alt=189.3/165.0 gs=3.73 cls=3.71 latv=0.33 hdg=236.0 thdg=-146.9 herr=-22.9
+[WIND_CRUISE] toB=237.5 alt=188.1/165.0 gs=3.78 cls=3.77 latv=0.21 hdg=227.0 thdg=-146.9 herr=-13.9
+[WIND_CRUISE] toB=236.6 alt=187.5/165.0 gs=3.79 cls=3.79 latv=0.14 hdg=223.0 thdg=-146.9 herr=-9.9
+[WIND_CRUISE] toB=234.6 alt=186.5/165.0 gs=3.82 cls=3.82 latv=-0.01 hdg=214.0 thdg=-146.9 herr=-0.9
+[WIND_CRUISE] toB=233.7 alt=186.0/165.0 gs=3.83 cls=3.83 latv=-0.07 hdg=210.0 thdg=-146.9 herr=3.1
+[WIND_CRUISE] toB=231.8 alt=184.9/165.0 gs=3.84 cls=3.84 latv=-0.11 hdg=210.0 thdg=-146.9 herr=3.1
+[WIND_CRUISE] toB=229.9 alt=184.0/165.0 gs=3.87 cls=3.87 latv=-0.12 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=228.9 alt=183.5/165.0 gs=3.88 cls=3.87 latv=-0.13 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=227.0 alt=182.5/165.0 gs=3.87 cls=3.86 latv=-0.14 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=226.0 alt=182.0/165.0 gs=3.86 cls=3.86 latv=-0.15 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=224.1 alt=181.1/165.0 gs=3.87 cls=3.87 latv=-0.16 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=222.1 alt=180.2/165.0 gs=3.87 cls=3.86 latv=-0.18 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=221.2 alt=179.8/165.0 gs=3.87 cls=3.86 latv=-0.18 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=219.2 alt=178.9/128.0 gs=3.89 cls=3.88 latv=-0.21 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=218.3 alt=178.5/128.0 gs=3.88 cls=3.88 latv=-0.22 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=216.4 alt=177.2/128.0 gs=3.85 cls=3.85 latv=-0.21 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=214.4 alt=175.3/128.0 gs=3.85 cls=3.84 latv=-0.22 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=213.5 alt=174.3/128.0 gs=3.85 cls=3.84 latv=-0.22 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=211.6 alt=172.3/128.0 gs=3.86 cls=3.86 latv=-0.24 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=209.6 alt=170.0/128.0 gs=3.86 cls=3.86 latv=-0.24 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=208.7 alt=168.9/128.0 gs=3.88 cls=3.87 latv=-0.24 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=206.7 alt=166.7/128.0 gs=3.89 cls=3.88 latv=-0.25 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=204.8 alt=164.5/128.0 gs=3.89 cls=3.88 latv=-0.25 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=203.8 alt=163.5/128.0 gs=3.90 cls=3.89 latv=-0.25 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=201.9 alt=161.7/128.0 gs=3.90 cls=3.89 latv=-0.25 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=200.9 alt=160.8/128.0 gs=3.90 cls=3.89 latv=-0.25 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=199.0 alt=159.2/128.0 gs=3.91 cls=3.90 latv=-0.24 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=197.0 alt=157.6/128.0 gs=3.89 cls=3.88 latv=-0.26 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=196.1 alt=156.8/128.0 gs=3.88 cls=3.87 latv=-0.25 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=194.1 alt=155.3/128.0 gs=3.87 cls=3.87 latv=-0.24 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=192.2 alt=153.6/128.0 gs=3.88 cls=3.87 latv=-0.26 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=191.2 alt=152.8/128.0 gs=3.90 cls=3.89 latv=-0.26 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=189.3 alt=151.3/128.0 gs=3.92 cls=3.91 latv=-0.28 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=187.4 alt=150.0/128.0 gs=3.93 cls=3.92 latv=-0.26 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=186.4 alt=149.4/128.0 gs=3.92 cls=3.91 latv=-0.26 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=184.4 alt=148.3/128.0 gs=3.91 cls=3.90 latv=-0.25 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=183.5 alt=147.8/128.0 gs=3.92 cls=3.92 latv=-0.25 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=181.5 alt=146.9/128.0 gs=3.92 cls=3.91 latv=-0.25 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=179.5 alt=145.8/128.0 gs=3.93 cls=3.92 latv=-0.25 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=178.6 alt=145.4/128.0 gs=3.92 cls=3.92 latv=-0.26 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=176.6 alt=144.5/128.0 gs=3.93 cls=3.92 latv=-0.27 hdg=212.0 thdg=-146.9 herr=1.1
+[WIND_CRUISE] toB=175.6 alt=144.0/128.0 gs=3.93 cls=3.92 latv=-0.27 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=173.7 alt=143.1/128.0 gs=3.93 cls=3.92 latv=-0.27 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=171.7 alt=142.3/128.0 gs=3.95 cls=3.94 latv=-0.27 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=170.7 alt=142.0/128.0 gs=3.95 cls=3.94 latv=-0.28 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=168.8 alt=141.4/90.0 gs=3.96 cls=3.95 latv=-0.28 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=166.8 alt=140.6/90.0 gs=3.94 cls=3.93 latv=-0.27 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=165.8 alt=139.9/90.0 gs=3.94 cls=3.93 latv=-0.28 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=163.9 alt=138.2/90.0 gs=3.92 cls=3.91 latv=-0.29 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=162.9 alt=137.1/90.0 gs=3.91 cls=3.90 latv=-0.29 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=161.0 alt=135.1/90.0 gs=3.91 cls=3.90 latv=-0.30 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=160.0 alt=134.0/90.0 gs=3.92 cls=3.91 latv=-0.30 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=158.0 alt=131.8/90.0 gs=3.91 cls=3.90 latv=-0.31 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=156.1 alt=129.5/90.0 gs=3.92 cls=3.91 latv=-0.30 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=155.1 alt=128.4/90.0 gs=3.92 cls=3.91 latv=-0.31 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=153.2 alt=126.3/90.0 gs=3.92 cls=3.91 latv=-0.30 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=151.2 alt=124.1/90.0 gs=3.92 cls=3.90 latv=-0.30 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=150.3 alt=123.2/90.0 gs=3.93 cls=3.92 latv=-0.30 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=148.3 alt=121.4/90.0 gs=3.92 cls=3.91 latv=-0.30 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=146.4 alt=119.6/90.0 gs=3.92 cls=3.90 latv=-0.31 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=145.4 alt=118.8/90.0 gs=3.94 cls=3.93 latv=-0.31 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=143.4 alt=117.3/90.0 gs=3.95 cls=3.94 latv=-0.32 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=142.5 alt=116.4/90.0 gs=3.95 cls=3.94 latv=-0.32 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=140.5 alt=114.8/90.0 gs=3.94 cls=3.92 latv=-0.32 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=138.5 alt=113.3/90.0 gs=3.94 cls=3.93 latv=-0.34 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=137.6 alt=112.7/90.0 gs=3.95 cls=3.93 latv=-0.34 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=135.6 alt=111.5/90.0 gs=3.93 cls=3.91 latv=-0.35 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=133.7 alt=110.2/90.0 gs=3.94 cls=3.92 latv=-0.36 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=132.7 alt=109.6/90.0 gs=3.92 cls=3.90 latv=-0.35 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=130.7 alt=108.3/90.0 gs=3.94 cls=3.92 latv=-0.37 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=129.8 alt=107.6/52.0 gs=3.94 cls=3.93 latv=-0.38 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=127.8 alt=106.4/52.0 gs=3.93 cls=3.92 latv=-0.37 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=125.9 alt=104.8/52.0 gs=3.92 cls=3.90 latv=-0.37 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=124.9 alt=103.8/52.0 gs=3.92 cls=3.90 latv=-0.38 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=122.9 alt=101.7/52.0 gs=3.94 cls=3.92 latv=-0.37 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=121.0 alt=99.4/52.0 gs=3.92 cls=3.91 latv=-0.38 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=120.0 alt=98.2/52.0 gs=3.92 cls=3.91 latv=-0.38 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=118.0 alt=96.1/52.0 gs=3.93 cls=3.91 latv=-0.38 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=117.1 alt=95.1/52.0 gs=3.91 cls=3.89 latv=-0.38 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=115.2 alt=93.1/52.0 gs=3.89 cls=3.88 latv=-0.37 hdg=213.0 thdg=-146.9 herr=0.1
+[WIND_CRUISE] toB=113.2 alt=91.1/52.0 gs=3.89 cls=3.87 latv=-0.38 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=112.3 alt=90.1/52.0 gs=3.89 cls=3.87 latv=-0.40 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=110.3 alt=88.2/52.0 gs=3.91 cls=3.89 latv=-0.42 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=109.3 alt=87.3/52.0 gs=3.91 cls=3.89 latv=-0.40 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=107.4 alt=85.6/52.0 gs=3.91 cls=3.88 latv=-0.43 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=105.4 alt=83.8/52.0 gs=3.92 cls=3.89 latv=-0.44 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=104.5 alt=83.0/52.0 gs=3.91 cls=3.88 latv=-0.44 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=102.5 alt=81.3/52.0 gs=3.91 cls=3.89 latv=-0.46 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=100.6 alt=79.7/52.0 gs=3.93 cls=3.90 latv=-0.47 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=99.6 alt=79.0/52.0 gs=3.94 cls=3.91 latv=-0.48 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=97.6 alt=77.7/52.0 gs=3.93 cls=3.90 latv=-0.49 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=96.7 alt=77.0/52.0 gs=3.93 cls=3.90 latv=-0.50 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=94.7 alt=75.7/28.0 gs=3.92 cls=3.89 latv=-0.48 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=92.8 alt=74.3/28.0 gs=3.92 cls=3.89 latv=-0.50 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=91.8 alt=73.4/28.0 gs=3.92 cls=3.89 latv=-0.50 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=89.9 alt=71.7/28.0 gs=3.90 cls=3.87 latv=-0.48 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=88.0 alt=69.7/28.0 gs=3.91 cls=3.88 latv=-0.48 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=87.0 alt=68.7/28.0 gs=3.91 cls=3.88 latv=-0.50 hdg=213.0 thdg=-145.9 herr=1.1
+[WIND_CRUISE] toB=85.1 alt=66.7/28.0 gs=3.92 cls=3.88 latv=-0.53 hdg=213.0 thdg=-145.9 herr=1.1
+WIND_CRUISE -> APPROACH
+[APPROACH/PATCH4] toB=83.1 alt=64.7/24.0 gs=3.93 cls=3.89 latv=-0.55 hdg=213.0 trk=213.0 herr=4.9 merr=5.8 whdg=213.1 herrW=0.1 herrT=5.8
+[APPROACH/PATCH4] toB=82.1 alt=63.7/24.0 gs=3.93 cls=3.89 latv=-0.56 hdg=213.0 trk=210.7 herr=5.0 merr=8.1 whdg=213.1 herrW=0.1 herrT=5.9
+[APPROACH/PATCH4] toB=80.2 alt=61.8/24.0 gs=3.83 cls=3.79 latv=-0.57 hdg=213.0 trk=210.9 herr=5.2 merr=8.2 whdg=213.1 herrW=0.1 herrT=6.1
+[APPROACH/PATCH4] toB=79.3 alt=60.8/24.0 gs=3.77 cls=3.72 latv=-0.56 hdg=213.0 trk=211.0 herr=5.3 merr=8.1 whdg=213.1 herrW=0.1 herrT=6.2
+[APPROACH/PATCH4] toB=77.5 alt=59.0/24.0 gs=3.66 cls=3.62 latv=-0.56 hdg=214.0 trk=210.8 herr=4.4 merr=8.5 whdg=213.1 herrW=-0.9 herrT=5.4
+[APPROACH/PATCH4] toB=75.7 alt=57.0/24.0 gs=3.56 cls=3.51 latv=-0.55 hdg=214.0 trk=210.6 herr=4.6 merr=9.0 whdg=213.1 herrW=-0.9 herrT=5.6
+[APPROACH/PATCH4] toB=74.8 alt=56.2/24.0 gs=3.51 cls=3.47 latv=-0.56 hdg=214.0 trk=210.5 herr=4.7 merr=9.1 whdg=213.1 herrW=-0.9 herrT=5.7
+[APPROACH/PATCH4] toB=73.1 alt=54.4/24.0 gs=3.44 cls=3.39 latv=-0.58 hdg=214.0 trk=210.5 herr=4.9 merr=9.4 whdg=213.1 herrW=-0.9 herrT=5.9
+[APPROACH/PATCH4] toB=72.3 alt=53.5/24.0 gs=3.41 cls=3.36 latv=-0.57 hdg=214.0 trk=210.5 herr=5.0 merr=9.5 whdg=213.1 herrW=-0.9 herrT=6.0
+[APPROACH/PATCH4] toB=70.6 alt=51.9/24.0 gs=3.34 cls=3.29 latv=-0.58 hdg=214.0 trk=210.4 herr=5.2 merr=9.8 whdg=213.1 herrW=-0.9 herrT=6.2
+[APPROACH/PATCH4] toB=69.0 alt=50.4/24.0 gs=3.30 cls=3.25 latv=-0.58 hdg=214.0 trk=210.4 herr=4.3 merr=10.0 whdg=213.1 herrW=-0.9 herrT=6.5
+[APPROACH/PATCH4] toB=68.2 alt=49.7/24.0 gs=3.28 cls=3.23 latv=-0.57 hdg=214.0 trk=210.8 herr=4.3 merr=9.8 whdg=213.1 herrW=-0.9 herrT=6.6
+[APPROACH/PATCH4] toB=66.6 alt=48.3/24.0 gs=3.24 cls=3.18 latv=-0.58 hdg=214.0 trk=210.6 herr=4.5 merr=10.2 whdg=213.1 herrW=-0.9 herrT=6.8
+[APPROACH/PATCH4] toB=65.8 alt=47.5/24.0 gs=3.23 cls=3.17 latv=-0.58 hdg=214.0 trk=210.8 herr=4.6 merr=10.2 whdg=213.1 herrW=-0.9 herrT=6.9
+[APPROACH/PATCH4] toB=64.3 alt=46.1/24.0 gs=3.19 cls=3.14 latv=-0.59 hdg=214.0 trk=210.8 herr=4.8 merr=10.4 whdg=213.1 herrW=-0.9 herrT=7.2
+[APPROACH/PATCH4] toB=62.7 alt=44.7/24.0 gs=3.15 cls=3.10 latv=-0.57 hdg=214.0 trk=210.8 herr=5.0 merr=10.7 whdg=213.1 herrW=-0.9 herrT=7.5
+[APPROACH/PATCH4] toB=61.9 alt=44.2/24.0 gs=3.14 cls=3.08 latv=-0.60 hdg=214.0 trk=211.2 herr=5.0 merr=10.4 whdg=213.1 herrW=-0.9 herrT=7.6
+[APPROACH/PATCH4] toB=60.4 alt=43.1/24.0 gs=3.11 cls=3.05 latv=-0.60 hdg=214.0 trk=210.7 herr=5.2 merr=11.1 whdg=213.1 herrW=-0.9 herrT=7.9
+[APPROACH/PATCH4] toB=59.7 alt=42.6/24.0 gs=3.10 cls=3.04 latv=-0.61 hdg=214.0 trk=210.7 herr=5.3 merr=11.3 whdg=213.1 herrW=-0.9 herrT=8.0
+[APPROACH/PATCH4] toB=58.1 alt=41.5/24.0 gs=3.08 cls=3.02 latv=-0.62 hdg=215.0 trk=210.7 herr=4.6 merr=11.6 whdg=213.1 herrW=-1.9 herrT=7.3
+[APPROACH/PATCH4] toB=56.6 alt=40.5/24.0 gs=3.05 cls=2.98 latv=-0.64 hdg=215.0 trk=210.7 herr=4.8 merr=11.9 whdg=213.1 herrW=-1.9 herrT=7.6
+[APPROACH/PATCH4] toB=55.9 alt=40.1/24.0 gs=3.05 cls=2.98 latv=-0.65 hdg=215.0 trk=210.7 herr=4.9 merr=12.1 whdg=213.1 herrW=-1.9 herrT=7.8
+[APPROACH/PATCH4] toB=54.4 alt=39.4/15.0 gs=3.04 cls=2.97 latv=-0.66 hdg=215.0 trk=210.7 herr=5.1 merr=12.4 whdg=213.1 herrW=-1.9 herrT=8.1
+[APPROACH/PATCH4] toB=52.9 alt=38.5/15.0 gs=3.03 cls=2.95 latv=-0.70 hdg=215.0 trk=210.7 herr=5.4 merr=12.8 whdg=213.1 herrW=-1.9 herrT=8.5
+[APPROACH/PATCH4] toB=52.2 alt=38.0/15.0 gs=3.03 cls=2.94 latv=-0.71 hdg=216.0 trk=210.2 herr=4.5 merr=13.5 whdg=213.1 herrW=-2.9 herrT=7.6
+[APPROACH/PATCH4] toB=50.7 alt=37.0/15.0 gs=3.03 cls=2.94 latv=-0.73 hdg=216.0 trk=210.2 herr=4.8 merr=13.8 whdg=213.1 herrW=-2.9 herrT=8.0
+[APPROACH/PATCH4] toB=49.3 alt=35.8/15.0 gs=3.02 cls=2.93 latv=-0.74 hdg=216.0 trk=210.7 herr=3.9 merr=13.8 whdg=213.1 herrW=-2.9 herrT=8.5
+[APPROACH/PATCH4] toB=48.6 alt=35.3/15.0 gs=3.01 cls=2.92 latv=-0.75 hdg=216.0 trk=210.2 herr=4.1 merr=14.5 whdg=213.1 herrW=-2.9 herrT=8.7
+[APPROACH/PATCH4] toB=47.1 alt=34.2/15.0 gs=3.02 cls=2.91 latv=-0.78 hdg=216.0 trk=210.4 herr=4.3 merr=14.7 whdg=213.1 herrW=-2.9 herrT=9.1
+[APPROACH/PATCH4] toB=46.4 alt=33.6/15.0 gs=3.02 cls=2.91 latv=-0.80 hdg=216.0 trk=210.2 herr=4.5 merr=15.2 whdg=213.1 herrW=-2.9 herrT=9.4
+[APPROACH/PATCH4] toB=44.9 alt=32.5/15.0 gs=3.01 cls=2.89 latv=-0.83 hdg=216.0 trk=210.4 herr=4.8 merr=15.4 whdg=213.1 herrW=-2.9 herrT=9.9
+[APPROACH/PATCH4] toB=44.2 alt=31.9/15.0 gs=3.01 cls=2.89 latv=-0.83 hdg=216.0 trk=210.6 herr=4.9 merr=15.5 whdg=213.1 herrW=-2.9 herrT=10.1
+[APPROACH/PATCH4] toB=42.8 alt=30.9/15.0 gs=3.00 cls=2.88 latv=-0.84 hdg=216.0 trk=210.7 herr=5.2 merr=16.0 whdg=213.1 herrW=-2.9 herrT=10.6
+[APPROACH/PATCH4] toB=41.3 alt=29.9/15.0 gs=2.99 cls=2.86 latv=-0.85 hdg=216.0 trk=210.9 herr=5.6 merr=16.3 whdg=213.1 herrW=-2.9 herrT=11.2
+[APPROACH/PATCH4] toB=39.9 alt=29.1/15.0 gs=3.00 cls=2.87 latv=-0.88 hdg=216.0 trk=210.9 herr=5.9 merr=16.9 whdg=213.1 herrW=-2.9 herrT=11.8
+[APPROACH/PATCH4] toB=39.2 alt=28.8/15.0 gs=3.00 cls=2.86 latv=-0.88 hdg=217.0 trk=211.6 herr=5.1 merr=16.5 whdg=213.1 herrW=-3.9 herrT=11.1
+[APPROACH/PATCH4] toB=37.7 alt=28.1/15.0 gs=3.00 cls=2.85 latv=-0.92 hdg=217.0 trk=210.9 herr=5.5 merr=17.9 whdg=213.1 herrW=-3.9 herrT=11.8
+[APPROACH/PATCH4] toB=37.0 alt=27.7/15.0 gs=2.98 cls=2.82 latv=-0.94 hdg=217.0 trk=211.1 herr=5.7 merr=18.0 whdg=213.1 herrW=-3.9 herrT=12.1
+[APPROACH/PATCH4] toB=35.6 alt=27.0/15.0 gs=2.95 cls=2.78 latv=-0.98 hdg=218.0 trk=211.1 herr=5.2 merr=18.8 whdg=213.1 herrW=-4.9 herrT=11.9
+[APPROACH/PATCH4] toB=34.2 alt=26.3/8.0 gs=2.96 cls=2.78 latv=-1.02 hdg=218.0 trk=210.9 herr=7.4 merr=19.8 whdg=213.1 herrW=-4.9 herrT=12.7
+[APPROACH/PATCH4] toB=33.5 alt=26.0/8.0 gs=2.94 cls=2.75 latv=-1.04 hdg=219.0 trk=210.6 herr=6.7 merr=20.5 whdg=213.1 herrW=-5.9 herrT=12.1
+[APPROACH/PATCH4] toB=32.2 alt=25.3/8.0 gs=2.93 cls=2.73 latv=-1.07 hdg=221.0 trk=211.1 herr=5.3 merr=20.9 whdg=213.1 herrW=-7.9 herrT=11.0
+[APPROACH/PATCH4] toB=31.5 alt=24.9/8.0 gs=2.92 cls=2.71 latv=-1.08 hdg=222.0 trk=211.1 herr=4.7 merr=21.4 whdg=213.1 herrW=-8.9 herrT=10.5
+[APPROACH/PATCH4] toB=30.1 alt=24.0/8.0 gs=2.90 cls=2.67 latv=-1.12 hdg=222.0 trk=211.3 herr=5.4 merr=22.2 whdg=213.1 herrW=-8.9 herrT=11.5
+[APPROACH/PATCH4] toB=28.8 alt=23.1/8.0 gs=2.87 cls=2.62 latv=-1.15 hdg=222.0 trk=211.3 herr=6.1 merr=23.3 whdg=213.1 herrW=-8.9 herrT=12.6
+[APPROACH/PATCH4] toB=28.2 alt=22.7/8.0 gs=2.85 cls=2.61 latv=-1.16 hdg=222.0 trk=211.1 herr=6.5 merr=24.1 whdg=213.1 herrW=-8.9 herrT=13.1
+[APPROACH/PATCH4] toB=26.9 alt=21.8/8.0 gs=2.83 cls=2.57 latv=-1.19 hdg=224.0 trk=211.8 herr=5.4 merr=24.6 whdg=213.1 herrW=-10.9 herrT=12.3
+[APPROACH/PATCH4] toB=26.2 alt=21.4/8.0 gs=2.83 cls=2.55 latv=-1.23 hdg=225.0 trk=212.0 herr=4.8 merr=25.0 whdg=213.1 herrW=-11.9 herrT=12.0
+[APPROACH/PATCH4] toB=25.0 alt=20.4/8.0 gs=2.79 cls=2.48 latv=-1.28 hdg=225.0 trk=211.5 herr=5.8 merr=26.8 whdg=213.1 herrW=-11.9 herrT=13.3
+[APPROACH/PATCH4] toB=23.7 alt=19.5/8.0 gs=2.75 cls=2.41 latv=-1.33 hdg=225.0 trk=211.2 herr=6.8 merr=28.6 whdg=213.1 herrW=-11.9 herrT=14.9
+[APPROACH/PATCH4] toB=23.1 alt=19.1/8.0 gs=2.75 cls=2.39 latv=-1.36 hdg=225.0 trk=211.0 herr=7.4 merr=29.7 whdg=213.1 herrW=-11.9 herrT=15.7
+[APPROACH/PATCH4] toB=22.0 alt=18.4/8.0 gs=2.74 cls=2.34 latv=-1.42 hdg=227.0 trk=211.2 herr=11.1 merr=31.2 whdg=213.1 herrW=-13.9 herrT=15.5
+[APPROACH/PATCH4] toB=20.8 alt=17.8/8.0 gs=2.70 cls=2.28 latv=-1.45 hdg=230.0 trk=212.0 herr=9.7 merr=32.4 whdg=213.1 herrW=-16.9 herrT=14.3
+[APPROACH/PATCH4] toB=20.2 alt=17.5/8.0 gs=2.67 cls=2.25 latv=-1.44 hdg=232.0 trk=213.0 herr=8.5 merr=32.3 whdg=213.1 herrW=-18.9 herrT=13.3
+[APPROACH/PATCH4] toB=19.1 alt=17.0/4.5 gs=2.64 cls=2.20 latv=-1.46 hdg=235.0 trk=213.5 herr=7.3 merr=33.9 whdg=213.1 herrW=-21.9 herrT=12.4
+[APPROACH/PATCH4] toB=18.6 alt=16.8/4.5 gs=2.61 cls=2.16 latv=-1.47 hdg=236.0 trk=214.6 herr=7.2 merr=33.9 whdg=213.1 herrW=-22.9 herrT=12.5
+[APPROACH/PATCH4] toB=17.5 alt=16.3/4.5 gs=2.57 cls=2.06 latv=-1.53 hdg=239.0 trk=214.3 herr=6.2 merr=36.5 whdg=213.1 herrW=-25.9 herrT=11.9
+[APPROACH/PATCH4] toB=16.5 alt=15.7/4.5 gs=2.54 cls=1.98 latv=-1.59 hdg=241.0 trk=214.6 herr=6.4 merr=38.8 whdg=213.1 herrW=-27.9 herrT=12.5
+[APPROACH/PATCH4] toB=16.0 alt=15.4/4.5 gs=2.54 cls=1.93 latv=-1.64 hdg=241.0 trk=214.6 herr=7.6 merr=40.3 whdg=213.1 herrW=-27.9 herrT=13.9
+[APPROACH/PATCH4] toB=15.1 alt=14.8/4.5 gs=2.52 cls=1.84 latv=-1.72 hdg=243.0 trk=214.7 herr=8.2 merr=43.3 whdg=213.1 herrW=-29.9 herrT=15.0
+[APPROACH/PATCH4] toB=14.2 alt=14.2/4.5 gs=2.49 cls=1.71 latv=-1.80 hdg=246.0 trk=214.7 herr=8.2 merr=46.7 whdg=213.1 herrW=-32.9 herrT=15.4
+[APPROACH/PATCH4] toB=13.8 alt=13.9/4.5 gs=2.45 cls=1.63 latv=-1.83 hdg=247.0 trk=215.3 herr=16.2 merr=47.8 whdg=213.1 herrW=-33.9 herrT=16.2
+[APPROACH/PATCH4] toB=13.0 alt=13.4/4.5 gs=2.41 cls=1.50 latv=-1.89 hdg=251.0 trk=215.1 herr=16.1 merr=52.0 whdg=213.1 herrW=-37.9 herrT=16.1
+[APPROACH/PATCH4] toB=12.7 alt=13.3/4.5 gs=2.39 cls=1.43 latv=-1.92 hdg=252.0 trk=214.8 herr=17.2 merr=54.5 whdg=213.1 herrW=-38.9 herrT=17.2
+[APPROACH/PATCH4] toB=12.0 alt=12.8/4.5 gs=2.35 cls=1.25 latv=-1.99 hdg=255.0 trk=216.0 herr=18.7 merr=57.7 whdg=213.1 herrW=-41.9 herrT=18.7
+[APPROACH/PATCH4] toB=11.4 alt=12.4/2.5 gs=2.31 cls=1.09 latv=-2.04 hdg=259.0 trk=216.3 herr=19.6 merr=62.3 whdg=213.1 herrW=-45.9 herrT=19.6
+[APPROACH/PATCH4] toB=11.2 alt=12.2/2.5 gs=2.29 cls=0.99 latv=-2.07 hdg=260.0 trk=216.7 herr=21.2 merr=64.5 whdg=213.1 herrW=-46.9 herrT=21.2
+[APPROACH/PATCH4] toB=10.7 alt=11.9/2.5 gs=2.26 cls=0.80 latv=-2.12 hdg=263.0 trk=217.0 herr=23.6 merr=69.6 whdg=213.1 herrW=-49.9 herrT=23.6
+[APPROACH/PATCH4] toB=10.4 alt=11.5/2.5 gs=2.23 cls=0.58 latv=-2.15 hdg=267.0 trk=217.7 herr=25.4 merr=74.6 whdg=213.1 herrW=-53.9 herrT=25.4
+[APPROACH/PATCH4] toB=10.3 alt=11.3/2.5 gs=2.22 cls=0.47 latv=-2.17 hdg=268.0 trk=216.8 herr=27.4 merr=78.6 whdg=213.1 herrW=-54.9 herrT=27.4
+[APPROACH/PATCH4] toB=10.1 alt=10.9/2.5 gs=2.18 cls=0.23 latv=-2.17 hdg=271.0 trk=217.9 herr=30.4 merr=83.5 whdg=213.1 herrW=-57.9 herrT=30.4
+[APPROACH/PATCH4] toB=10.0 alt=10.7/2.5 gs=2.17 cls=0.12 latv=-2.17 hdg=273.0 trk=217.5 herr=31.5 merr=87.0 whdg=213.1 herrW=-59.9 herrT=31.5
+[APPROACH/PATCH4] toB=10.0 alt=10.3/2.5 gs=2.13 cls=-0.12 latv=-2.12 hdg=276.0 trk=217.6 herr=34.6 merr=93.0 whdg=213.1 herrW=-62.9 herrT=34.6
+[APPROACH/PATCH4] toB=10.2 alt=9.8/2.5 gs=2.10 cls=-0.35 latv=-2.07 hdg=279.0 trk=217.1 herr=37.5 merr=99.4 whdg=213.1 herrW=-65.9 herrT=37.5
+APPROACH overshoot -> LAND
+[LAND/SMART_FLARE] toB=10.3 alt=9.6 gs=2.09 cls=-0.45 alongE=7.81 crossE=6.64 alongS=1.45 crossS=-1.50 vs=-1.21 hdg=281.0 axis=279.0 roll=1491 pitch=1478 yaw=1500 thr=1456
+[LAND/SMART_FLARE] toB=10.5 alt=9.1 gs=2.06 cls=-0.66 alongE=7.33 crossE=7.55 alongS=1.45 crossS=-1.46 vs=-2.54 hdg=283.0 axis=279.0 roll=1488 pitch=1478 yaw=1500 thr=1456
+[LAND/SMART_FLARE] toB=10.7 alt=8.8 gs=2.09 cls=-0.78 alongE=7.09 crossE=8.01 alongS=1.49 crossS=-1.46 vs=-1.46 hdg=283.0 axis=279.0 roll=1486 pitch=1478 yaw=1500 thr=1456
+[LAND/SMART_FLARE] toB=11.1 alt=8.2 gs=2.12 cls=-0.97 alongE=6.62 crossE=8.95 alongS=1.52 crossS=-1.49 vs=-3.14 hdg=283.0 axis=279.0 roll=1483 pitch=1478 yaw=1500 thr=1456
+[LAND/SMART_FLARE] toB=11.6 alt=7.6 gs=2.15 cls=-1.14 alongE=6.14 crossE=9.89 alongS=1.54 crossS=-1.50 vs=-3.08 hdg=283.0 axis=279.0 roll=1479 pitch=1478 yaw=1500 thr=1456
+[LAND/SMART_FLARE] toB=11.9 alt=7.3 gs=2.19 cls=-1.24 alongE=5.90 crossE=10.38 alongS=1.58 crossS=-1.52 vs=-1.46 hdg=283.0 axis=279.0 roll=1477 pitch=1478 yaw=1500 thr=1456
+[LAND/SMART_FLARE] toB=12.6 alt=6.7 gs=2.20 cls=-1.39 alongE=5.43 crossE=11.36 alongS=1.60 crossS=-1.51 vs=-2.70 hdg=283.0 axis=279.0 roll=1474 pitch=1478 yaw=1500 thr=1456
+[LAND/SMART_FLARE] toB=13.3 alt=6.2 gs=2.22 cls=-1.52 alongE=4.96 crossE=12.34 alongS=1.62 crossS=-1.51 vs=-2.83 hdg=283.0 axis=279.0 roll=1470 pitch=1478 yaw=1500 thr=1456
+[LAND/SMART_FLARE] toB=13.7 alt=5.9 gs=2.23 cls=-1.58 alongE=4.73 crossE=12.84 alongS=1.64 crossS=-1.51 vs=-1.40 hdg=283.0 axis=279.0 roll=1468 pitch=1478 yaw=1500 thr=1460
+[LAND/SMART_FLARE] toB=14.5 alt=5.5 gs=2.27 cls=-1.72 alongE=4.28 crossE=13.86 alongS=1.69 crossS=-1.51 vs=-2.08 hdg=283.0 axis=279.0 roll=1464 pitch=1478 yaw=1500 thr=1460
+[LAND/SMART_FLARE] toB=14.9 alt=5.3 gs=2.29 cls=-1.77 alongE=4.05 crossE=14.38 alongS=1.71 crossS=-1.52 vs=-0.99 hdg=283.0 axis=279.0 roll=1462 pitch=1478 yaw=1500 thr=1460
+[LAND/SMART_FLARE] toB=15.8 alt=4.8 gs=2.35 cls=-1.88 alongE=3.59 crossE=15.44 alongS=1.76 crossS=-1.55 vs=-2.21 hdg=283.0 axis=279.0 roll=1459 pitch=1478 yaw=1500 thr=1460
+[LAND/SMART_FLARE] toB=16.8 alt=4.3 gs=2.40 cls=-2.00 alongE=3.13 crossE=16.52 alongS=1.82 crossS=-1.57 vs=-2.36 hdg=283.0 axis=279.0 roll=1455 pitch=1478 yaw=1500 thr=1460
+[LAND/SMART_FLARE] toB=17.3 alt=4.1 gs=2.43 cls=-2.05 alongE=2.91 crossE=17.08 alongS=1.83 crossS=-1.59 vs=-1.33 hdg=283.0 axis=279.0 roll=1453 pitch=1478 yaw=1500 thr=1460
+[LAND/SMART_FLARE] toB=18.4 alt=3.6 gs=2.49 cls=-2.17 alongE=2.45 crossE=18.21 alongS=1.91 crossS=-1.59 vs=-2.30 hdg=283.0 axis=279.0 roll=1449 pitch=1476 yaw=1500 thr=1460
+[LAND/SMART_FLARE] toB=19.5 alt=3.3 gs=2.57 cls=-2.29 alongE=2.00 crossE=19.38 alongS=1.99 crossS=-1.63 vs=-1.67 hdg=283.0 axis=279.0 roll=1445 pitch=1476 yaw=1500 thr=1460
+[LAND/SMART_FLARE] toB=20.1 alt=3.2 gs=2.62 cls=-2.35 alongE=1.77 crossE=19.98 alongS=2.04 crossS=-1.64 vs=-0.67 hdg=283.0 axis=279.0 roll=1442 pitch=1476 yaw=1500 thr=1460
+[LAND/SMART_FLARE] toB=21.3 alt=2.9 gs=2.69 cls=-2.47 alongE=1.32 crossE=21.23 alongS=2.13 crossS=-1.64 vs=-1.51 hdg=283.0 axis=279.0 roll=1440 pitch=1476 yaw=1500 thr=1462
+[LAND/SMART_FLARE] toB=21.9 alt=2.7 gs=2.74 cls=-2.54 alongE=1.10 crossE=21.87 alongS=2.18 crossS=-1.67 vs=-0.94 hdg=283.0 axis=279.0 roll=1440 pitch=1476 yaw=1500 thr=1462
+[LAND/SMART_FLARE] toB=23.2 alt=2.3 gs=2.84 cls=-2.66 alongE=0.64 crossE=23.19 alongS=2.27 crossS=-1.71 vs=-1.69 hdg=283.0 axis=279.0 roll=1440 pitch=1476 yaw=1500 thr=1462
+[LAND/SMART_FLARE] toB=24.6 alt=2.0 gs=2.92 cls=-2.76 alongE=0.18 crossE=24.56 alongS=2.33 crossS=-1.76 vs=-1.82 hdg=283.0 axis=279.0 roll=1440 pitch=1474 yaw=1500 thr=1462
+[LAND/SMART_FLARE] toB=25.3 alt=1.8 gs=2.97 cls=-2.81 alongE=-0.06 crossE=25.26 alongS=2.38 crossS=-1.76 vs=-1.01 hdg=283.0 axis=279.0 roll=1440 pitch=1474 yaw=1500 thr=1462
+[LAND/SMART_FLARE] toB=26.7 alt=1.3 gs=3.02 cls=-2.88 alongE=-0.52 crossE=26.68 alongS=2.43 crossS=-1.79 vs=-2.37 hdg=283.0 axis=279.0 roll=1440 pitch=1474 yaw=1500 thr=1464
+[LAND/SMART_FLARE] toB=28.1 alt=0.7 gs=3.09 cls=-2.96 alongE=-0.99 crossE=28.12 alongS=2.48 crossS=-1.83 vs=-2.77 hdg=283.0 axis=279.0 roll=1440 pitch=1474 yaw=1500 thr=1464
+LAND complete
+RC overrides очищено
+З'єднання закрито
