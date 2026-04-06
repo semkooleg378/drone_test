@@ -23,6 +23,8 @@ TAKEOFF_DONE_ALT = 200.0
 APPROACH_DISTANCE_M = 20.0
 LAND_DISTANCE_M = 5.0
 
+MAX_HOLD_STEPS = 50
+
 # Частота циклу
 DT = 0.2  # 5 Гц
 
@@ -36,7 +38,7 @@ RC_YAW_NEUTRAL = 1500
 RC_MIN = 1100
 RC_MAX = 1900
 
-# Канали можуть відрізнятись у конкретній конфігурації, але зазвичай:
+# Канали можуть відрізнятися у конкретній конфігурації, але зазвичай:
 # 1 = roll, 2 = pitch, 3 = throttle, 4 = yaw
 CH_ROLL = '1'
 CH_PITCH = '2'
@@ -52,6 +54,8 @@ class State(Enum):
     APPROACH = "APPROACH"
     LAND = "LAND"
     DONE = "DONE"
+    FINAL_BRAKE = "FINAL_BRAKE"
+    PRE_FINAL_ALIGN = "PRE_FINAL_ALIGN"
 
 def set_param_checked(vehicle, name, value, retries=5, delay=1.0):
 
@@ -73,10 +77,15 @@ def set_param_checked(vehicle, name, value, retries=5, delay=1.0):
 
     return False
     
-def clamp(value, lo, hi):
-    return max(lo, min(hi, int(value)))
+# =========================
+# допоміжні clamp-функції
+# =========================
+def clampf(value, lo, hi):
+    return max(lo, min(hi, float(value)))
 
-
+def clamp_rc(value, lo=RC_MIN, hi=RC_MAX):
+    return max(lo, min(hi, int(round(value))))
+    
 def normalize_angle_deg(angle):
     while angle > 180:
         angle -= 360
@@ -179,8 +188,12 @@ def compute_track_error(prev_lat, prev_lon, lat, lon, target_lat, target_lon, la
     
 class DroneFSM:
     def __init__(self, vehicle):
+        self.DT = DT
+        
         self.vehicle = vehicle
         self.state = State.TAKEOFF
+        
+        self.hold_counter = 0
 
         self.target_lat = B_LAT
         self.target_lon = B_LON
@@ -192,6 +205,10 @@ class DroneFSM:
         
         self.cruise_start_lat = None
         self.cruise_start_lon = None
+        
+        self.cruise_phase = "FAR"
+        self.cruise_mode = "TRACK"
+        self.cruise_kick_ticks = 0        
         
         #self.alt_first = None
         #self.alt_last = None
@@ -240,6 +257,7 @@ class DroneFSM:
         self.capture_cross_sign = 0.0
         self.capture_target_heading = None
         self.capture_ok_ticks = 0
+        self.capture_line_heading = None
         
         self.prev_capture_abs_cross = None
         self.capture_no_progress_ticks = 0
@@ -250,12 +268,14 @@ class DroneFSM:
         self.land_offset_lat = None
         self.land_offset_lon = None
         
+        self.approach_recap_latched = False
         self.approach_min_target_alt = None
         self.land_heading_ref = None        
         self.prev_nav_lat = None
         self.prev_nav_lon = None
         
         self.land_axis_heading = None
+        self.prev_cross_line_err = None
                 
     def read_state(self):
         pos = self.vehicle.location.global_relative_frame
@@ -275,13 +295,13 @@ class DroneFSM:
         overrides = {}
 
         if roll is not None:
-            overrides[CH_ROLL] = clamp(roll, RC_MIN, RC_MAX)
+            overrides[CH_ROLL] = clamp_rc(roll, RC_MIN, RC_MAX)
         if pitch is not None:
-            overrides[CH_PITCH] = clamp(pitch, RC_MIN, RC_MAX)
+            overrides[CH_PITCH] = clamp_rc(pitch, RC_MIN, RC_MAX)
         if throttle is not None:
-            overrides[CH_THROTTLE] = clamp(throttle, RC_MIN, RC_MAX)
+            overrides[CH_THROTTLE] = clamp_rc(throttle, RC_MIN, RC_MAX)
         if yaw is not None:
-            overrides[CH_YAW] = clamp(yaw, RC_MIN, RC_MAX)
+            overrides[CH_YAW] = clamp_rc(yaw, RC_MIN, RC_MAX)
 
         self.vehicle.channels.overrides = overrides
 
@@ -373,7 +393,7 @@ class DroneFSM:
             return
 
         # Лінія через B вздовж вітру.
-        # Если wind_est_dir = куда сносит, то ось линии такая же.
+        # Якщо wind_est_dir = куди зносить, то вісь лінії така сама.
         line_bearing = self.wind_est_dir
 
         # Друга точка на лінії через B
@@ -395,15 +415,16 @@ class DroneFSM:
             return
 
         # signed cross-track:
-        # >0 с одной стороны линии, <0 с другой
+        # >0 з одного боку лінії, <0 з іншого
         cross = (apx * aby - apy * abx) / ab_len
 
         self.capture_line_bearing = normalize_angle_deg(line_bearing)
+        self.capture_line_heading = self.capture_line_bearing
         self.capture_cross_sign = 1.0 if cross >= 0 else -1.0
 
-        # Захоплюємо лінію поперечным движением:
-        # если мы справа от линии, идём влево на 90°
-        # если слева — вправо на 90°
+        # Захоплюємо лінію поперечним рухом:
+        # якщо ми праворуч від лінії, йдемо вліво на 90°
+        # якщо ліворуч — вправо на 90°
         if self.capture_cross_sign > 0:
             self.capture_target_heading = normalize_angle_deg(self.capture_line_bearing + 90.0)
         else:
@@ -453,12 +474,12 @@ class DroneFSM:
         elif s['alt'] < TARGET_ALT * 0.95:
             throttle = 1545
         else:
-            vertical_speed = (s['alt'] - self.prev_alt) / DT if self.prev_alt is not None else 0.0
+            vertical_speed = (s['alt'] - self.prev_alt) / self.DT if self.prev_alt is not None else 0.0
             self.prev_alt = s['alt']
 
             base_takeoff_throttle = 1485
             throttle = base_takeoff_throttle - 3.0 * vertical_speed
-            throttle = clamp(throttle, 1450, 1500)    
+            throttle = clamp_rc(throttle, 1450, 1500)    
             
         print(f"[TAKEOFF] alt={s['alt']:.2f} throttle={throttle}")
 
@@ -475,6 +496,7 @@ class DroneFSM:
             self.prev_alt = None
             self.stable_hold_ticks = 0
             self.hover_throttle = 1474 #1364 #1360
+            self.hold_counter = 0
             print("Перехід TAKEOFF -> HOLD")
 
     def handle_hold(self, s):
@@ -514,7 +536,7 @@ class DroneFSM:
         KP_ALT = 2.5
         KD_ALT = 8.0
 
-        vertical_speed = (s['alt'] - self.prev_alt) / DT if self.prev_alt is not None else 0.0
+        vertical_speed = (s['alt'] - self.prev_alt) / self.DT if self.prev_alt is not None else 0.0
         self.prev_alt = s['alt']
 
         # Коефіцієнт можна підбирати
@@ -527,7 +549,7 @@ class DroneFSM:
 
         # Обмеження діапазону, щоб не розгойдувало
         # throttle = clamp(throttle, 1470, 1535)
-        throttle = clamp(throttle, 1300, 1525)
+        throttle = clamp_rc(throttle, 1300, 1525)
 
         #print(f"[HOLD] alt={s['alt']:.2f} error={error:.2f} throttle={throttle}")
         print(
@@ -551,7 +573,7 @@ class DroneFSM:
             self.hold_counter = 0
         self.hold_counter += 1
         """    
-        # Для тесту тримаємо 15 секунд и выходим
+        # Для тесту тримаємо 15 секунд і виходимо
         """
         if self.hold_start is not None and time.time() - self.hold_start > 15 and math.fabs(TARGET_ALT-self.alt_first)+math.fabs(TARGET_ALT-self.alt_last) < 1.0:
             print("Тест утримання завершено")
@@ -559,7 +581,7 @@ class DroneFSM:
             self.cruise_start_lat = self.vehicle.location.global_relative_frame.lat
             self.cruise_start_lon = self.vehicle.location.global_relative_frame.lon
         """
-        # Умова "успокоились около цели"
+        # Умова "заспокоїлись біля цілі"
         stable_alt = abs(error) < 1.0
         stable_vs = abs(vertical_speed) < 0.3
 
@@ -569,7 +591,7 @@ class DroneFSM:
             self.stable_hold_ticks = 0
 
         #if self.hold_start is not None and time.time() - self.hold_start > 10 and stable_alt and stable_vs:
-        if self.hold_start is not None and time.time() - self.hold_start > 4 and self.stable_hold_ticks >= 4:
+        if self.hold_counter>=MAX_HOLD_STEPS or( self.hold_start is not None and time.time() - self.hold_start > 4 and self.stable_hold_ticks >= 4):
             print("Тест утримання завершено")
             self.prepare_capture_line()
             self.state = State.CAPTURE_LINE
@@ -579,6 +601,7 @@ class DroneFSM:
             self.prev_alt = None
             self.prev_capture_abs_cross = None
             self.capture_no_progress_ticks = 0
+        self.hold_counter += 1
 
     def handle_capture_line(self, s):
         import math
@@ -587,11 +610,6 @@ class DroneFSM:
             dx = (lon1 - lon0) * 111320.0 * math.cos(math.radians(lat0))
             dy = (lat1 - lat0) * 111320.0
             return dx, dy
-
-        def from_local_m(lat0, lon0, dx, dy):
-            lat = lat0 + dy / 111320.0
-            lon = lon0 + dx / (111320.0 * math.cos(math.radians(lat0)))
-            return lat, lon
 
         vx, vy, vz = self.vehicle.velocity
 
@@ -604,56 +622,39 @@ class DroneFSM:
             print("[CAPTURE_LINE] no wind estimate")
             return
 
-        # Лінія через B вздовж вітру
+        # ---------------------------------------------------------
+        # Лінія через B уздовж вітру
+        # ---------------------------------------------------------
         line_bearing = self.wind_est_dir % 360.0
         ref2_lat, ref2_lon = self.offset_gps(B_LAT, B_LON, line_bearing, 100.0)
 
-        # Локальна геометрія
         abx, aby = to_local_m(B_LAT, B_LON, ref2_lat, ref2_lon)
         apx, apy = to_local_m(B_LAT, B_LON, lat, lon)
 
-        ab_len2 = abx * abx + aby * aby
-        ab_len = math.sqrt(ab_len2)
-
+        ab_len = math.hypot(abx, aby)
         if ab_len < 1e-6:
             print("[CAPTURE_LINE] invalid geometry")
             return
 
-        # signed cross-track для лога
+        # signed cross-track
         cross_track = (apx * aby - apy * abx) / ab_len
         abs_cross = abs(cross_track)
 
-        # Найближча точка на лінії
-        proj = (apx * abx + apy * aby) / ab_len2
-        cx = proj * abx
-        cy = proj * aby
+        # вісь лінії
+        axis = math.radians(line_bearing)
 
-        closest_lat, closest_lon = from_local_m(B_LAT, B_LON, cx, cy)
-
-        # Курс у найближчу точку лінії
-        target_heading = bearing_deg(lat, lon, closest_lat, closest_lon)
-
-        # Форсажний увод трохи "глибше" в бік лінії, поки далеко
-        if abs_cross > 300.0:
-            heading_boost = 14.0
-        elif abs_cross > 220.0:
-            heading_boost = 10.0
-        elif abs_cross > 140.0:
-            heading_boost = 6.0
-        else:
-            heading_boost = 0.0
-
-        if cross_track < 0:
-            target_heading = normalize_angle_deg(target_heading - heading_boost)
-        else:
-            target_heading = normalize_angle_deg(target_heading + heading_boost)
-
-        heading_error = normalize_angle_deg(target_heading - heading)
+        # швидкості в координатах лінії
+        cross_speed = vx * math.cos(axis) - vy * math.sin(axis)
+        along_speed = vx * math.sin(axis) + vy * math.cos(axis)
         ground_speed = math.hypot(vx, vy)
 
-        # Контроль прогресу по cross-track
+        dist_to_B = distance_m(lat, lon, B_LAT, B_LON)
+
+        # ---------------------------------------------------------
+        # Прогрес
+        # ---------------------------------------------------------
         if self.prev_capture_abs_cross is not None:
-            if abs_cross < self.prev_capture_abs_cross - 0.5:
+            if abs_cross < self.prev_capture_abs_cross - 1.0:
                 self.capture_no_progress_ticks = 0
             else:
                 self.capture_no_progress_ticks += 1
@@ -662,56 +663,139 @@ class DroneFSM:
 
         self.prev_capture_abs_cross = abs_cross
 
-        # Висота
-        KP_ALT = 2.5
-        KD_ALT = 8.0
-        vertical_speed = (alt - self.prev_alt) / DT if self.prev_alt is not None else 0.0
+        # ---------------------------------------------------------
+        # Режими лише за близькістю до лінії
+        # HARD - основний грубий переріз
+        # FINAL - лише коли вже справді поруч
+        # ---------------------------------------------------------
+        if abs_cross > 70.0:
+            mode = "HARD"
+        else:
+            mode = "FINAL"
+
+        # ---------------------------------------------------------
+        # Цільова поперечна швидкість
+        # Для cross_track < 0 хочемо додатний cross_speed
+        # Для cross_track > 0 хочемо від’ємний cross_speed
+        # ---------------------------------------------------------
+        if cross_track < 0.0:
+            cut_heading = normalize_angle_deg(line_bearing + 90.0)
+            if mode == "HARD":
+                desired_cross_speed = 4.6
+            else:
+                desired_cross_speed = 1.8
+        else:
+            cut_heading = normalize_angle_deg(line_bearing - 90.0)
+            if mode == "HARD":
+                desired_cross_speed = -4.6
+            else:
+                desired_cross_speed = -1.8
+
+        cross_speed_err = desired_cross_speed - cross_speed
+
+        # ---------------------------------------------------------
+        # target_heading
+        #
+        # Поки далеко - майже чистий переріз упоперек лінії.
+        # Жодного nearest-point і жодного "летимо на B".
+        # Лише невеликий bias за помилкою поперечної швидкості.
+        # ---------------------------------------------------------
+        if mode == "HARD":
+            heading_bias = clampf(2.6 * cross_speed_err, -9.0, 9.0)
+        else:
+            heading_bias = clampf(1.8 * cross_speed_err, -6.0, 6.0)
+
+        target_heading = normalize_angle_deg(cut_heading + heading_bias)
+        heading_error = normalize_angle_deg(target_heading - heading)
+
+        # ---------------------------------------------------------
+        # Pitch
+        #
+        # Далеко: не душимо, даємо тягнути.
+        # Але якщо прогрес млявий - трохи додаємо.
+        # ---------------------------------------------------------
+        if mode == "HARD":
+            if abs_cross > 260.0:
+                pitch_cmd = 1408
+            elif abs_cross > 180.0:
+                pitch_cmd = 1410
+            elif abs_cross > 120.0:
+                pitch_cmd = 1412
+            else:
+                pitch_cmd = 1414
+
+            if self.capture_no_progress_ticks > 8:
+                pitch_cmd -= 1
+            if self.capture_no_progress_ticks > 16:
+                pitch_cmd -= 1
+            if self.capture_no_progress_ticks > 28:
+                pitch_cmd -= 1
+
+            if ground_speed < 3.0:
+                pitch_cmd -= 1
+            if ground_speed < 2.5:
+                pitch_cmd -= 1
+
+            pitch = clamp_rc(pitch_cmd, 1404, 1416)
+
+        else:
+            pitch_cmd = 1438
+            if abs_cross < 45.0:
+                pitch_cmd = 1442
+            if abs_cross < 25.0:
+                pitch_cmd = 1446
+
+            # якщо ще надто швидко ріжемо лінію - трохи гальмуємо
+            if abs(cross_speed) > 2.2:
+                pitch_cmd += 1
+
+            pitch = clamp_rc(pitch_cmd, 1436, 1448)
+
+        # ---------------------------------------------------------
+        # Roll
+        #
+        # Головний канал - ріжемо поперечну помилку.
+        # Не лише heading_error, а й cross_speed_err.
+        # ---------------------------------------------------------
+        if mode == "HARD":
+            roll_cmd = (
+                1500
+                + 2.0 * heading_error
+                + 9.5 * cross_speed_err
+            )
+            roll = clamp_rc(roll_cmd, 1448, 1558)
+        else:
+            roll_cmd = (
+                1500
+                + 2.4 * heading_error
+                + 6.0 * cross_speed_err
+            )
+            roll = clamp_rc(roll_cmd, 1455, 1548)
+
+        # ---------------------------------------------------------
+        # Yaw - допоміжний
+        # ---------------------------------------------------------
+        if mode == "HARD":
+            yaw_cmd = 1500 + 3.4 * heading_error
+            yaw = clamp_rc(yaw_cmd, 1455, 1545)
+        else:
+            yaw_cmd = 1500 + 4.0 * heading_error
+            yaw = clamp_rc(yaw_cmd, 1460, 1540)
+
+        # ---------------------------------------------------------
+        # Вертикаль - тримаємо TARGET_ALT
+        # ---------------------------------------------------------
+        vertical_speed = (alt - self.prev_alt) / self.DT if self.prev_alt is not None else 0.0
         self.prev_alt = alt
 
+        KP_ALT = 2.5
+        KD_ALT = 8.0
         throttle = self.hover_throttle + KP_ALT * (TARGET_ALT - alt) - KD_ALT * vertical_speed
-        throttle = clamp(throttle, 1000, 1525)
+        throttle = clamp_rc(throttle, 1000, 1525)
 
         # ---------------------------------------------------------
-        # ФОРСАЖНИЙ PITCH:
-        # далеко від лінії -> активно прём до линии
+        # Команда
         # ---------------------------------------------------------
-        if abs_cross > 300.0:
-            base_pitch = 1415
-        elif abs_cross > 220.0:
-            base_pitch = 1418
-        elif abs_cross > 140.0:
-            base_pitch = 1424
-        elif abs_cross > 80.0:
-            base_pitch = 1436
-        else:
-            base_pitch = 1450
-
-        # Якщо довго немає нормального темпу, ще підсилюємо
-        if self.capture_no_progress_ticks > 10:
-            base_pitch -= 4
-        if self.capture_no_progress_ticks > 20:
-            base_pitch -= 4
-
-        # Не даємо піти в зовсім божевільний форсаж
-        base_pitch = max(1410, base_pitch)
-
-        # Якщо швидкість по землі зовсім просіла - ще трохи додати
-        if ground_speed < 2.8:
-            base_pitch = max(1410, base_pitch - 4)
-
-        roll = 1500
-        pitch = base_pitch
-        yaw = 1500
-        mode = "CAPTURE"
-
-        # Поки не довернули — активніше крутимо
-        if abs(heading_error) > 20.0:
-            roll = clamp(1500 + 3.8 * heading_error, 1455, 1545)
-            yaw  = clamp(1500 + 10.0 * heading_error, 1430, 1570)
-        else:
-            roll = clamp(1500 + 4.5 * heading_error, 1455, 1545)
-            yaw  = clamp(1500 + 8.8 * heading_error, 1435, 1565)
-
         self.set_rc(
             roll=roll,
             pitch=pitch,
@@ -720,124 +804,300 @@ class DroneFSM:
         )
 
         print(
-            f"[CAPTURE_LINE/{mode}] "
+            f"[CAPTURE_LINE/V3/{mode}] "
             f"xtrack={cross_track:.1f} absx={abs_cross:.1f} "
-            f"alt={alt:.1f} gs={ground_speed:.2f} "
-            f"hdg={heading:.1f} thdg={target_heading:.1f} "
-            f"herr={heading_error:.1f} "
+            f"xs={cross_speed:.2f}/{desired_cross_speed:.2f} "
+            f"as={along_speed:.2f} gs={ground_speed:.2f} "
+            f"toB={dist_to_B:.1f} alt={alt:.1f} "
+            f"hdg={heading:.1f} thdg={target_heading:.1f} herr={heading_error:.1f} "
             f"roll={roll} pitch={pitch} yaw={yaw} thr={throttle} "
             f"nprog={self.capture_no_progress_ticks}"
         )
 
-        # Захопили лінію — тоді в CRUISE
-        CAPTURE_XTRACK_OK = 7.0
-        CAPTURE_CONFIRM_TICKS = 3
+        # ---------------------------------------------------------
+        # Вихід у CRUISE
+        #
+        # Лише коли справді підійшли до лінії.
+        # Жодних таймерів. Жодних forced exit.
+        # ---------------------------------------------------------
+        CAPTURE_X_OK = 10.0
+        CAPTURE_X_GOOD = 6.0
+        CAPTURE_CONFIRM_TICKS = 4
 
-        if abs_cross <= CAPTURE_XTRACK_OK:
-            self.capture_ok_ticks += 1
+        if mode == "FINAL":
+            if abs_cross <= 8.0 and abs(cross_speed) <= 1.2:
+                self.capture_ok_ticks += 1
+            #elif abs_cross <= CAPTURE_X_OK and abs(cross_speed) <= 2.2:
+            #    self.capture_ok_ticks += 1
+            else:
+                self.capture_ok_ticks = 0
         else:
             self.capture_ok_ticks = 0
 
         if self.capture_ok_ticks >= CAPTURE_CONFIRM_TICKS:
-            print("[CAPTURE_LINE] line captured -> CRUISE")
+            self.capture_line_heading = line_bearing
+            print(
+                f"[CAPTURE_LINE] line captured -> CRUISE "
+                f"(absx={abs_cross:.1f}, xs={cross_speed:.2f}, toB={dist_to_B:.1f})"
+            )
             self.capture_ok_ticks = 0
+            self.cruise_phase = "FAR"
+            self.cruise_mode = "TRACK"
+            self.cruise_kick_ticks = 0
             self.state = State.CRUISE
             return
-    
-        if self.capture_no_progress_ticks > 40 and abs_cross > 80.0:
-            print("[CAPTURE_LINE] slow progress, keep forcing capture")
-            self.capture_no_progress_ticks = 20            
             
-    def handle_cruise(self, s):
+    def handle_cruise_along_line(self, s):
+        import math
+
+        def to_local_m(lat0, lon0, lat1, lon1):
+            dx = (lon1 - lon0) * 111320.0 * math.cos(math.radians(lat0))
+            dy = (lat1 - lat0) * 111320.0
+            return dx, dy
+
+        vx, vy, vz = self.vehicle.velocity
+
         lat = self.vehicle.location.global_relative_frame.lat
         lon = self.vehicle.location.global_relative_frame.lon
         alt = self.vehicle.location.global_relative_frame.alt or 0.0
         heading = self.vehicle.heading or 0.0
 
-        vx, vy, vz = self.vehicle.velocity
-
-        dist_to_target = distance_m(lat, lon, B_LAT, B_LON)
-        bearing_to_target = bearing_deg(lat, lon, B_LAT, B_LON)
-        ground_speed = math.hypot(vx, vy)
-
-        # Базовий курс уздовж вітру
-        wind_heading = self.wind_est_dir % 360.0
-
-        to_b_err = normalize_angle_deg(bearing_to_target - wind_heading)
-
-        if dist_to_target > 180.0:
-            mix_gain = 0.45
-            mix_limit = 22.0
-        elif dist_to_target > 120.0:
-            mix_gain = 0.35
-            mix_limit = 18.0
-        elif dist_to_target > 80.0:
-            mix_gain = 0.28
-            mix_limit = 14.0
+        if self.capture_line_heading is not None:
+            line_bearing = self.capture_line_heading % 360.0
+        elif self.wind_est_dir is not None:
+            line_bearing = self.wind_est_dir % 360.0
         else:
-            mix_gain = 0.20
-            mix_limit = 10.0
+            line_bearing = bearing_deg(lat, lon, B_LAT, B_LON)
 
-        heading_correction = clamp(mix_gain * to_b_err, -mix_limit, mix_limit)
-        target_heading = normalize_angle_deg(wind_heading + heading_correction)
+        ref2_lat, ref2_lon = self.offset_gps(B_LAT, B_LON, line_bearing, 100.0)
 
-        heading_error = normalize_angle_deg(target_heading - heading)
+        abx, aby = to_local_m(B_LAT, B_LON, ref2_lat, ref2_lon)
+        apx, apy = to_local_m(B_LAT, B_LON, lat, lon)
 
-        br = math.radians(bearing_to_target)
+        ab_len = math.hypot(abx, aby)
+        if ab_len < 1e-6:
+            print("[CRUISE_ALONG_LINE] invalid geometry")
+            return
+
+        cross_line_err = (apx * aby - apy * abx) / ab_len
+        along_line_err = (apx * abx + apy * aby) / ab_len
+
+        axis = math.radians(line_bearing)
+        cross_line_speed = vx * math.cos(axis) - vy * math.sin(axis)
+        along_line_speed = vx * math.sin(axis) + vy * math.cos(axis)
+
+        dist_to_B = distance_m(lat, lon, B_LAT, B_LON)
+        bearing_to_B = bearing_deg(lat, lon, B_LAT, B_LON)
+
+        br = math.radians(bearing_to_B)
         cls = vx * math.cos(br) + vy * math.sin(br)
         latv = -vx * math.sin(br) + vy * math.cos(br)
+        ground_speed = math.hypot(vx, vy)
+
+        abs_cross = abs(cross_line_err)
+        abs_along = abs(along_line_err)
+        drift_angle = normalize_angle_deg(bearing_to_B - heading)
+
+        if not hasattr(self, "cruise_phase"):
+            self.cruise_phase = "FAR"
+        if not hasattr(self, "cruise_mode"):
+            self.cruise_mode = "TRACK"
+        if not hasattr(self, "cruise_kick_ticks"):
+            self.cruise_kick_ticks = 0
 
         # ---------------------------------------------------------
-        # Цільова висота в CRUISE: ще трохи нижче
+        # FAR: TRACK + KICKBACK
         # ---------------------------------------------------------
-        if dist_to_target > 220.0:
-            cruise_target_alt = 165.0
-        elif dist_to_target > 170.0:
-            cruise_target_alt = 128.0
-        elif dist_to_target > 130.0:
-            cruise_target_alt = 90.0
-        elif dist_to_target > 95.0:
-            cruise_target_alt = 52.0
-        elif dist_to_target > 70.0:
-            cruise_target_alt = 28.0
+        if self.cruise_phase == "FAR":
+            if self.cruise_mode == "KICKBACK":
+                self.cruise_kick_ticks -= 1
+                if self.cruise_kick_ticks <= 0:
+                    self.cruise_mode = "TRACK"
+            else:
+                if abs_cross > 8.2 or (abs_cross > 7.6 and abs(cross_line_speed) > 1.25):
+                    self.cruise_mode = "KICKBACK"
+                    self.cruise_kick_ticks = 5
+
+        # ---------------------------------------------------------
+        # FAR -> NEAR раніше
+        # ---------------------------------------------------------
+        go_near = (
+            self.cruise_phase == "FAR" and
+            (
+                (dist_to_B <= 540.0 and abs_cross <= 10.5 and abs(cross_line_speed) <= 1.40) or
+                (dist_to_B <= 500.0)
+            )
+        )
+
+        if go_near:
+            self.cruise_phase = "NEAR"
+            self.cruise_mode = "TRACK"
+            self.cruise_kick_ticks = 0
+            print(
+                f"[CRUISE_ALONG_LINE] FAR -> NEAR "
+                f"toB={dist_to_B:.1f} crossE={cross_line_err:.1f} crossS={cross_line_speed:.2f} "
+                f"alongE={along_line_err:.1f} alongS={along_line_speed:.2f} "
+                f"alt={alt:.1f} cls={cls:.2f} latv={latv:.2f}"
+            )
+
+        # ---------------------------------------------------------
+        # Межі фаз
+        # ---------------------------------------------------------
+        if self.cruise_phase == "FAR":
+            roll_min, roll_max = 1428, 1572
+            pitch_min, pitch_max = 1470, 1481
         else:
-            cruise_target_alt = 14.0
+            roll_min, roll_max = 1445, 1558
+            pitch_min, pitch_max = 1468, 1480
 
         # ---------------------------------------------------------
-        # Вертикаль
+        # Висота
+        # FAR — як було
+        # NEAR — нижчий descent corridor
         # ---------------------------------------------------------
-        KP_ALT = 3.2
-        KD_ALT = 8.8
-        vertical_speed = (alt - self.prev_alt) / DT if self.prev_alt is not None else 0.0
-        self.prev_alt = alt
+        if self.cruise_phase == "FAR":
+            if dist_to_B > 350.0:
+                target_alt = 200.0
+            elif dist_to_B > 310.0:
+                target_alt = 170.0
+            elif dist_to_B > 270.0:
+                target_alt = 135.0
+            elif dist_to_B > 230.0:
+                target_alt = 100.0
+            elif dist_to_B > 190.0:
+                target_alt = 72.0
+            elif dist_to_B > 155.0:
+                target_alt = 50.0
+            elif dist_to_B > 125.0:
+                target_alt = 34.0
+            elif dist_to_B > 95.0:
+                target_alt = 22.0
+            else:
+                target_alt = 14.0
 
-        throttle = self.hover_throttle + KP_ALT * (cruise_target_alt - alt) - KD_ALT * vertical_speed
-        throttle = clamp(throttle, 1000, 1525)
+            target_alt = max(target_alt, alt - 10.0)
+
+        else:
+            # Нижчий NEAR corridor, щоб не зависати на ~120 м
+            if dist_to_B > 260.0:
+                target_alt = 95.0
+            elif dist_to_B > 210.0:
+                target_alt = 70.0
+            elif dist_to_B > 170.0:
+                target_alt = 50.0
+            elif dist_to_B > 130.0:
+                target_alt = 34.0
+            elif dist_to_B > 95.0:
+                target_alt = 22.0
+            else:
+                target_alt = 14.0
+
+            # У NEAR ще сильніше тягнемо вниз
+            target_alt = max(target_alt, alt - 14.0)
+
+            # Якщо вісь попливла — трохи притримуємо, але не даємо знову висіти високо
+            if abs_cross > 10.0:
+                target_alt = max(target_alt, alt - 8.0)
+            elif abs_cross > 9.0:
+                target_alt = max(target_alt, alt - 10.0)
 
         # ---------------------------------------------------------
-        # Roll/Yaw
+        # Керування по лінії
         # ---------------------------------------------------------
-        roll = clamp(1500 + 3.8 * heading_error, 1460, 1540)
-        yaw  = clamp(1500 + 8.5 * heading_error, 1438, 1562)
+        if self.cruise_phase == "FAR":
+            if self.cruise_mode == "TRACK":
+                desired_along_speed = 3.0
+                target_heading = normalize_angle_deg(
+                    line_bearing
+                    + clampf(-1.3 * cross_line_err, -12.0, 12.0)
+                    + clampf(-2.2 * cross_line_speed, -9.0, 9.0)
+                )
+                roll_cmd = (
+                    1500
+                    + 1.35 * normalize_angle_deg(target_heading - heading)
+                    + 1.8 * (-latv)
+                    + 1.3 * (-cross_line_err)
+                    + 4.2 * (-cross_line_speed)
+                )
+            else:
+                desired_along_speed = 2.4
+                target_heading = normalize_angle_deg(
+                    line_bearing
+                    + clampf(-3.0 * cross_line_err, -22.0, 22.0)
+                    + clampf(-4.8 * cross_line_speed, -14.0, 14.0)
+                )
+                roll_cmd = (
+                    1500
+                    + 1.15 * normalize_angle_deg(target_heading - heading)
+                    + 2.6 * (-cross_line_err)
+                    + 6.2 * (-cross_line_speed)
+                    + 1.8 * (-latv)
+                )
+        else:
+            # Логіку лінії майже не змінюємо
+            desired_along_speed = 1.35
+            target_heading = normalize_angle_deg(
+                line_bearing
+                + clampf(-2.8 * cross_line_err, -16.0, 16.0)
+                + clampf(-3.4 * cross_line_speed, -10.0, 10.0)
+                + clampf(0.20 * normalize_angle_deg(bearing_to_B - line_bearing), -5.0, 5.0)
+            )
+            roll_cmd = (
+                1500
+                + 1.5 * normalize_angle_deg(target_heading - heading)
+                + 2.2 * (-latv)
+                + 2.8 * (-cross_line_err)
+                + 5.4 * (-cross_line_speed)
+            )
+
+        heading_error = normalize_angle_deg(target_heading - heading)
+        roll = clamp_rc(roll_cmd, roll_min, roll_max)
 
         # ---------------------------------------------------------
         # Pitch
         # ---------------------------------------------------------
-        pitch = 1450
+        along_err = desired_along_speed - along_line_speed
+        pitch_cmd = 1472 - 8.0 * along_err
 
-        if cls < 2.6:
-            pitch = 1438
-        elif cls < 2.8:
-            pitch = 1442
-        elif cls < 3.0:
-            pitch = 1446
+        if self.cruise_phase == "FAR":
+            if self.cruise_mode == "KICKBACK":
+                pitch_cmd += 1
+                if abs_cross > 9.0:
+                    pitch_cmd += 1
+                if abs_cross > 10.5:
+                    pitch_cmd += 1
+        else:
+            if abs_cross > 7.5:
+                pitch_cmd += 1
+            if abs_cross > 9.0:
+                pitch_cmd += 1
+            if abs_cross > 10.0:
+                pitch_cmd += 1
+            if abs(cross_line_speed) > 1.05:
+                pitch_cmd += 1
+            if dist_to_B <= 220.0:
+                pitch_cmd += 1
+            if dist_to_B <= 170.0:
+                pitch_cmd += 1
 
-        if abs(latv) > 1.4:
-            pitch -= 4
-        elif abs(latv) > 0.9:
-            pitch -= 2
+        pitch = clamp_rc(pitch_cmd, pitch_min, pitch_max)
 
-        pitch = clamp(pitch, 1434, 1500)
+        # ---------------------------------------------------------
+        # Вертикаль
+        # ---------------------------------------------------------
+        vertical_speed = (alt - self.prev_alt) / self.DT if self.prev_alt is not None else 0.0
+        self.prev_alt = alt
+
+        KP_ALT = 6.2 if self.cruise_phase == "FAR" else 9.2
+        KD_ALT = 9.5
+        throttle = self.hover_throttle + KP_ALT * (target_alt - alt) - KD_ALT * vertical_speed
+        throttle = clamp_rc(throttle, 1080, 1525)
+
+        # ---------------------------------------------------------
+        # Yaw
+        # ---------------------------------------------------------
+        yaw_cmd = 1500 + 3.0 * heading_error
+        yaw = clamp_rc(yaw_cmd, 1440, 1560)
 
         self.set_rc(
             roll=roll,
@@ -847,20 +1107,50 @@ class DroneFSM:
         )
 
         print(
-            f"[WIND_CRUISE] "
-            f"toB={dist_to_target:.1f} alt={alt:.1f}/{cruise_target_alt:.1f} "
-            f"gs={ground_speed:.2f} cls={cls:.2f} latv={latv:.2f} "
-            f"hdg={heading:.1f} thdg={target_heading:.1f} herr={heading_error:.1f}"
+            f"[CRUISE_ALONG_LINE/{self.cruise_phase}/{self.cruise_mode}] "
+            f"toB={dist_to_B:.1f} alt={alt:.1f}/{target_alt:.1f} "
+            f"crossE={cross_line_err:.1f} crossS={cross_line_speed:.2f} "
+            f"alongE={along_line_err:.1f} alongS={along_line_speed:.2f}/{desired_along_speed:.2f} "
+            f"gs={ground_speed:.2f} cls={cls:.2f} latv={latv:.2f} drift={drift_angle:.1f} "
+            f"hdg={heading:.1f} axis={line_bearing:.1f} B={bearing_to_B:.1f} "
+            f"thdg={target_heading:.1f} herr={heading_error:.1f} "
+            f"roll={roll} pitch={pitch} yaw={yaw} thr={throttle} "
+            f"kick={self.cruise_kick_ticks}"
         )
 
-        # У APPROACH заходимо нижче
-        if dist_to_target <= 90.0 and alt <= 68.0:
-            print("WIND_CRUISE -> APPROACH")
+        # ---------------------------------------------------------
+        # NEAR -> APPROACH
+        # ---------------------------------------------------------
+        enter_approach = (
+            self.cruise_phase == "NEAR" and
+            along_line_err < 0.0 and
+            abs_along <= 260.0 and
+            abs_cross <= 8.8 and
+            abs(cross_line_speed) <= 1.05 and
+            alt <= 80.0 and
+            cls >= 1.0
+        )
+
+        if enter_approach:
+            self.approach_axis_heading = line_bearing
+            self.approach_overshoot_ticks = 0
+            print(
+                f"[CRUISE_ALONG_LINE->APPROACH] "
+                f"toB={dist_to_B:.1f} "
+                f"crossE={cross_line_err:.1f} crossS={cross_line_speed:.2f} "
+                f"alongE={along_line_err:.1f} alongS={along_line_speed:.2f} "
+                f"alt={alt:.1f} cls={cls:.2f} latv={latv:.2f}"
+            )
             self.state = State.APPROACH
-            return
-        
+            return            
+            
     def handle_approach(self, s):
         import math
+
+        def to_local_m(lat0, lon0, lat1, lon1):
+            dx = (lon1 - lon0) * 111320.0 * math.cos(math.radians(lat0))
+            dy = (lat1 - lat0) * 111320.0
+            return dx, dy
 
         vx, vy, vz = self.vehicle.velocity
 
@@ -869,110 +1159,370 @@ class DroneFSM:
         alt = self.vehicle.location.global_relative_frame.alt or 0.0
         heading = self.vehicle.heading or 0.0
 
-        dist_to_target = distance_m(lat, lon, B_LAT, B_LON)
-        bearing_to_target = bearing_deg(lat, lon, B_LAT, B_LON)
+        dist_to_B = distance_m(lat, lon, B_LAT, B_LON)
+        bearing_to_B = bearing_deg(lat, lon, B_LAT, B_LON)
         ground_speed = math.hypot(vx, vy)
 
-        wind_heading = self.wind_est_dir % 360.0
-
-        if self.prev_nav_lat is not None and self.prev_nav_lon is not None:
-            dx = (lon - self.prev_nav_lon) * 111320.0 * math.cos(math.radians(lat))
-            dy = (lat - self.prev_nav_lat) * 111320.0
-            if abs(dx) + abs(dy) > 0.01:
-                track_heading = (math.degrees(math.atan2(dx, dy)) + 360.0) % 360.0
-            else:
-                track_heading = heading
+        # ---------------------------------------------------------
+        # Базова вісь заходу
+        # ---------------------------------------------------------
+        if getattr(self, "approach_axis_heading", None) is not None:
+            axis_heading = self.approach_axis_heading % 360.0
+        elif getattr(self, "capture_line_heading", None) is not None:
+            axis_heading = self.capture_line_heading % 360.0
+        elif self.wind_est_dir is not None:
+            axis_heading = self.wind_est_dir % 360.0
         else:
-            track_heading = heading
+            axis_heading = bearing_to_B
 
-        self.prev_nav_lat = lat
-        self.prev_nav_lon = lon
+        axis = math.radians(axis_heading)
+        br = math.radians(bearing_to_B)
 
-        if dist_to_target > 70.0:
-            align = 0.15
-        elif dist_to_target > 50.0:
-            align = 0.30
-        elif dist_to_target > 35.0:
-            align = 0.40
-        elif dist_to_target > 22.0:
-            align = 0.30
-        elif dist_to_target > 14.0:
-            align = 0.15
-        else:
-            align = 0.0
+        # ---------------------------------------------------------
+        # Геометрія відносно осі через B
+        # ---------------------------------------------------------
+        ref2_lat, ref2_lon = self.offset_gps(B_LAT, B_LON, axis_heading, 100.0)
+        abx, aby = to_local_m(B_LAT, B_LON, ref2_lat, ref2_lon)
+        apx, apy = to_local_m(B_LAT, B_LON, lat, lon)
 
-        course_delta = normalize_angle_deg(wind_heading - bearing_to_target)
-        target_heading = normalize_angle_deg(bearing_to_target + align * course_delta)
+        ab_len = math.hypot(abx, aby)
+        if ab_len < 1e-6:
+            print("[APPROACH] invalid geometry")
+            return
 
-        heading_error = normalize_angle_deg(target_heading - heading)
-        move_error = normalize_angle_deg(bearing_to_target - track_heading)
+        cross_line_err = (apx * aby - apy * abx) / ab_len
+        along_line_err = (apx * abx + apy * aby) / ab_len
 
-        herrW = normalize_angle_deg(wind_heading - heading)
-        herrT = normalize_angle_deg(bearing_to_target - heading)
+        cross_line_speed = vx * math.cos(axis) - vy * math.sin(axis)
+        along_line_speed = vx * math.sin(axis) + vy * math.cos(axis)
 
-        br = math.radians(bearing_to_target)
+        # ---------------------------------------------------------
+        # Швидкості відносно реальної B
+        # ---------------------------------------------------------
         cls = vx * math.cos(br) + vy * math.sin(br)
         latv = -vx * math.sin(br) + vy * math.cos(br)
 
-        if dist_to_target > 55.0:
-            raw_target_alt = 24.0
-        elif dist_to_target > 35.0:
-            raw_target_alt = 15.0
-        elif dist_to_target > 20.0:
-            raw_target_alt = 8.0
-        elif dist_to_target > 12.0:
-            raw_target_alt = 4.5
+        abs_cross = abs(cross_line_err)
+        abs_cross_speed = abs(cross_line_speed)
+        abs_latv = abs(latv)
+
+        # ---------------------------------------------------------
+        # Overshoot / no-progress
+        # ---------------------------------------------------------
+        if not hasattr(self, "approach_overshoot_ticks"):
+            self.approach_overshoot_ticks = 0
+
+        overshoot_now = (
+            (dist_to_B <= 28.0 and cls <= 0.35) or
+            (dist_to_B <= 22.0 and along_line_err >= -2.0) or
+            (dist_to_B <= 28.0 and abs_cross >= 16.0)
+        )
+
+        if overshoot_now:
+            self.approach_overshoot_ticks += 1
         else:
-            raw_target_alt = 2.5
+            self.approach_overshoot_ticks = 0
 
-        if self.approach_min_target_alt is None:
-            self.approach_min_target_alt = raw_target_alt
+        overshoot_active = self.approach_overshoot_ticks >= 1
+
+        # ---------------------------------------------------------
+        # Phase select
+        # POINT лише якщо геометрія вже пристойна
+        # ---------------------------------------------------------
+        point_ready = (
+            dist_to_B <= 10.0 and
+            abs_cross <= 6.5 and
+            abs_latv <= 0.9
+        )
+
+        force_point_on_overshoot = (
+            self.approach_overshoot_ticks >= 2 and
+            dist_to_B <= 16.0 and
+            abs_cross <= 7.5 and
+            abs_latv <= 0.9
+        )
+
+        if point_ready or force_point_on_overshoot:
+            phase = "POINT"
         else:
-            self.approach_min_target_alt = min(self.approach_min_target_alt, raw_target_alt)
+            phase = "AXIS"
 
-        approach_target_alt = self.approach_min_target_alt
+        # ---------------------------------------------------------
+        # Close-range recapture
+        # ---------------------------------------------------------
+        close_axis_recapture = (
+            phase == "AXIS" and
+            dist_to_B <= 36.0 and
+            abs_cross >= 8.5
+        )
 
-        KP_ALT = 3.4
-        KD_ALT = 9.0
-        vertical_speed = (alt - self.prev_alt) / DT if self.prev_alt is not None else 0.0
+        # було надто рано / надто "рятувально"
+        developing_miss = (
+            phase == "AXIS" and
+            dist_to_B <= 12.0 and
+            abs_cross > 8.7
+        )
+
+        # Latch close recapture
+        if not hasattr(self, "approach_recap_latched"):
+            self.approach_recap_latched = False
+
+        if phase == "AXIS":
+            if dist_to_B <= 36.0 and abs_cross >= 8.5:
+                self.approach_recap_latched = True
+            elif self.approach_recap_latched:
+                if dist_to_B > 40.0 or abs_cross <= 7.2:
+                    self.approach_recap_latched = False
+        else:
+            self.approach_recap_latched = False
+
+        close_axis_recapture = close_axis_recapture or self.approach_recap_latched
+
+        # ---------------------------------------------------------
+        # Heading
+        # ---------------------------------------------------------
+        if phase == "AXIS":
+            if dist_to_B > 90.0:
+                point_bias = 0.06
+            elif dist_to_B > 60.0:
+                point_bias = 0.10
+            elif dist_to_B > 35.0:
+                point_bias = 0.16
+            else:
+                point_bias = 0.20
+
+            axis_to_B_err = normalize_angle_deg(bearing_to_B - axis_heading)
+            base_heading = normalize_angle_deg(axis_heading + point_bias * axis_to_B_err)
+
+            if close_axis_recapture:
+                target_heading = normalize_angle_deg(
+                    base_heading
+                    + clampf(-5.2 * cross_line_err,  -44.0, 44.0)
+                    + clampf(-6.4 * cross_line_speed, -28.0, 28.0)
+                    + clampf(-3.2 * latv,            -24.0, 24.0)
+                )
+            elif abs_cross > 8.0 or abs_cross_speed > 0.8 or overshoot_active:
+                target_heading = normalize_angle_deg(
+                    base_heading
+                    + clampf(-3.8 * cross_line_err,  -36.0, 36.0)
+                    + clampf(-5.8 * cross_line_speed, -28.0, 28.0)
+                    + clampf(-3.0 * latv,            -24.0, 24.0)
+                )
+            else:
+                target_heading = normalize_angle_deg(
+                    base_heading
+                    + clampf(-3.0 * cross_line_err,  -28.0, 28.0)
+                    + clampf(-4.4 * cross_line_speed, -22.0, 22.0)
+                    + clampf(-2.4 * latv,            -18.0, 18.0)
+                )
+        else:
+            target_heading = normalize_angle_deg(
+                bearing_to_B
+                + clampf(-3.0 * latv, -24.0, 24.0)
+                + clampf(-0.8 * cross_line_err, -10.0, 10.0)
+            )
+
+        heading_error = normalize_angle_deg(target_heading - heading)
+
+        # ---------------------------------------------------------
+        # Висота
+        # ---------------------------------------------------------
+        if dist_to_B > 180.0:
+            target_alt = 46.0
+        elif dist_to_B > 130.0:
+            target_alt = 34.0
+        elif dist_to_B > 90.0:
+            target_alt = 23.0
+        elif dist_to_B > 60.0:
+            target_alt = 14.0
+        elif dist_to_B > 40.0:
+            target_alt = 9.0
+        elif dist_to_B > 28.0:
+            target_alt = 6.0
+        elif dist_to_B > 20.0:
+            target_alt = 4.2
+        elif dist_to_B > 15.0:
+            target_alt = 3.0
+        elif dist_to_B > 10.0:
+            target_alt = 2.2
+        else:
+            target_alt = 1.6
+        
+        # Поки поперечка погана — не валимося вниз надто бадьоро,
+        # але й не зависаємо високо у ближньому recapture
+        if phase == "AXIS":
+            if abs_cross > 10.0:
+                target_alt = max(target_alt, alt - 1.1)
+            if abs_cross > 14.0:
+                target_alt = max(target_alt, alt - 0.6)
+            if abs_cross > 18.0:
+                target_alt = max(target_alt, alt - 0.2)
+
+            if abs_latv > 1.0:
+                target_alt = max(target_alt, alt - 0.5)
+            if abs_latv > 1.4:
+                target_alt = max(target_alt, alt - 0.1)
+
+            if overshoot_active or close_axis_recapture:
+                if dist_to_B <= 16.0:
+                    target_alt = max(target_alt, alt - 1.20)
+                elif dist_to_B <= 24.0:
+                    target_alt = max(target_alt, alt - 0.90)
+                else:
+                    target_alt = max(target_alt, alt - 0.30)
+
+            if developing_miss:
+                target_alt = max(target_alt, alt - 0.70)
+            
+        vertical_speed = (alt - self.prev_alt) / self.DT if self.prev_alt is not None else 0.0
         self.prev_alt = alt
 
-        throttle = self.hover_throttle + KP_ALT * (approach_target_alt - alt) - KD_ALT * vertical_speed
-        throttle = clamp(throttle, 1000, 1500)
+        KP_ALT = 6.4
+        KD_ALT = 11.2
+        throttle = self.hover_throttle + KP_ALT * (target_alt - alt) - KD_ALT * vertical_speed
+        throttle = clamp_rc(throttle, 1000, 1510)
 
-        steer_error = clamp(1.00 * heading_error, -18.0, 18.0)
+        # ---------------------------------------------------------
+        # Pitch
+        # ---------------------------------------------------------
+        if phase == "AXIS":
+            if dist_to_B > 90.0:
+                desired_cls = 1.20
+            elif dist_to_B > 70.0:
+                desired_cls = 1.08
+            elif dist_to_B > 55.0:
+                desired_cls = 0.96
+            elif dist_to_B > 40.0:
+                desired_cls = 0.82
+            elif dist_to_B > 28.0:
+                desired_cls = 0.68
+            else:
+                desired_cls = 0.52
 
-        roll = clamp(1500 + 3.2 * steer_error - 2.8 * latv, 1485, 1535)
-        yaw  = clamp(1500 + 4.5 * steer_error, 1465, 1535)
+            if abs_cross > 8.0 or abs_cross_speed > 0.8:
+                desired_cls = max(desired_cls, 1.15)
+            if abs_cross > 12.0:
+                desired_cls = max(desired_cls, 1.25)
+            if abs_cross > 16.0:
+                desired_cls = max(desired_cls, 1.35)
 
-        if dist_to_target < 12.0:
-            if cls < 1.4:
-                pitch = 1508
-            elif cls < 1.9:
-                pitch = 1506
-            else:
-                pitch = 1504
-        elif dist_to_target < 16.0:
-            if cls < 1.8:
-                pitch = 1507
-            elif cls < 2.3:
-                pitch = 1505
-            else:
-                pitch = 1503
-        elif dist_to_target < 20.0:
-            if cls < 2.2:
-                pitch = 1502
-            elif cls < 2.6:
-                pitch = 1504
-            else:
-                pitch = 1506
+            if overshoot_active:
+                desired_cls = max(desired_cls, 1.15)
+                if abs_cross > 16.0:
+                    desired_cls = max(desired_cls, 1.30)
+
+            # ближній recapture м’якший, без вічного зависання
+            if close_axis_recapture:
+                desired_cls = max(desired_cls, 0.92)
+                if abs_cross > 9.3:
+                    desired_cls = max(desired_cls, 1.00)
+                if abs_cross > 10.8:
+                    desired_cls = max(desired_cls, 1.10)
+
+            if developing_miss:
+                desired_cls = max(desired_cls, 1.12)
+
+            # не даємо зовсім вбити поздовжню, поки cross ще поганий
+            if dist_to_B <= 14.0 and abs_cross > 8.0:
+                desired_cls = max(desired_cls, 0.72)
+            if dist_to_B <= 11.0 and abs_cross > 8.0:
+                desired_cls = max(desired_cls, 0.62)
+
+            cls_err = desired_cls - cls
+            pitch_cmd = 1547 - 6.2 * cls_err
+
+            if cls > desired_cls + 1.50:
+                pitch_cmd += 1
+            if cls > desired_cls + 2.10:
+                pitch_cmd += 1
+
+            if cls < desired_cls - 0.45:
+                pitch_cmd -= 1
+            if cls < desired_cls - 0.90:
+                pitch_cmd -= 1
+            if cls < desired_cls - 1.30:
+                pitch_cmd -= 1
+
+            if abs_cross > 10.0:
+                pitch_cmd += 1
+            if abs_latv > 1.0:
+                pitch_cmd += 1
+
+            if overshoot_active:
+                pitch_cmd = min(pitch_cmd, 1549)
+
+            if close_axis_recapture:
+                if dist_to_B <= 16.0:
+                    pitch_cmd = min(pitch_cmd, 1544)
+                else:
+                    pitch_cmd = min(pitch_cmd, 1545)
+                    
+            if developing_miss:
+                pitch_cmd = min(pitch_cmd, 1545)
+
+            pitch = clamp_rc(pitch_cmd, 1540, 1551)
+
         else:
-            if cls < 2.5:
-                pitch = 1495
-            elif cls < 2.8:
-                pitch = 1500
+            if dist_to_B > 10.0:
+                desired_cls = 0.32
+            elif dist_to_B > 6.0:
+                desired_cls = 0.18
             else:
-                pitch = 1505
+                desired_cls = 0.07
+
+            cls_err = desired_cls - cls
+            pitch_cmd = 1550 - 17.0 * cls_err
+
+            if self.approach_overshoot_ticks >= 2:
+                pitch_cmd += 2
+
+            pitch = clamp_rc(pitch_cmd, 1546, 1558)
+
+        # ---------------------------------------------------------
+        # Roll
+        # ---------------------------------------------------------
+        if phase == "AXIS":
+            if close_axis_recapture:
+                roll_cmd = (
+                    1500
+                    + 4.6 * heading_error
+                    + 11.5 * (-cross_line_speed)
+                    + 4.4 * (-latv)
+                    + 3.8 * (-cross_line_err)
+                )
+                roll = clamp_rc(roll_cmd, 1450, 1570)
+            elif abs_cross > 8.0 or abs_cross_speed > 0.8 or overshoot_active:
+                roll_cmd = (
+                    1500
+                    + 4.2 * heading_error
+                    + 11.0 * (-cross_line_speed)
+                    + 4.4 * (-latv)
+                    + 2.2 * (-cross_line_err)
+                )
+                roll = clamp_rc(roll_cmd, 1456, 1562)
+            else:
+                roll_cmd = (
+                    1500
+                    + 3.5 * heading_error
+                    + 8.8 * (-cross_line_speed)
+                    + 3.5 * (-latv)
+                    + 1.7 * (-cross_line_err)
+                )
+                roll = clamp_rc(roll_cmd, 1460, 1558)
+        else:
+            roll_cmd = (
+                1500
+                + 3.4 * heading_error
+                + 6.4 * (-latv)
+                + 1.1 * (-cross_line_err)
+            )
+            roll = clamp_rc(roll_cmd, 1468, 1550)
+
+        # ---------------------------------------------------------
+        # Yaw
+        # ---------------------------------------------------------
+        yaw_cmd = 1500 + 4.0 * heading_error
+        yaw = clamp_rc(yaw_cmd, 1458, 1542)
 
         self.set_rc(
             roll=roll,
@@ -982,37 +1532,74 @@ class DroneFSM:
         )
 
         print(
-            f"[APPROACH/PATCH4] "
-            f"toB={dist_to_target:.1f} alt={alt:.1f}/{approach_target_alt:.1f} "
-            f"gs={ground_speed:.2f} cls={cls:.2f} latv={latv:.2f} "
-            f"hdg={heading:.1f} trk={track_heading:.1f} "
-            f"herr={heading_error:.1f} merr={move_error:.1f} "
-            f"whdg={wind_heading:.1f} herrW={herrW:.1f} herrT={herrT:.1f}"
+            f"[APPROACH/{phase}] "
+            f"toB={dist_to_B:.1f} alt={alt:.1f}/{target_alt:.1f} "
+            f"crossE={cross_line_err:.1f} crossS={cross_line_speed:.2f} "
+            f"alongE={along_line_err:.1f} alongS={along_line_speed:.2f} "
+            f"cls={cls:.2f}/{desired_cls:.2f} latv={latv:.2f} "
+            f"gs={ground_speed:.2f} "
+            f"hdg={heading:.1f} axis={axis_heading:.1f} B={bearing_to_B:.1f} thdg={target_heading:.1f} "
+            f"herr={heading_error:.1f} "
+            f"roll={roll} pitch={pitch} yaw={yaw} thr={throttle} "
+            f"ovr={self.approach_overshoot_ticks} "
+            f"recap={1 if close_axis_recapture else 0} "
+            f"miss={1 if developing_miss else 0}"
         )
 
-        if not hasattr(self, "approach_overshoot_ticks"):
-            self.approach_overshoot_ticks = 0
+        # ---------------------------------------------------------
+        # Last-chance LAND gate:
+        # якщо ми вже майже біля точки і approach далі краще не зробить,
+        # входимо в LAND раніше, щоб не пролетіти повз
+        # ---------------------------------------------------------
+        last_chance_land = (
+            dist_to_B <= 10.5 and
+            alt <= 9.0 and
+            abs_cross <= 8.4 and
+            abs_latv <= 1.15 and
+            cls <= 0.45 and
+            (
+                along_line_err >= -2.5 or
+                self.approach_overshoot_ticks >= 2
+            )
+        )
 
-        if cls < -0.05:
-            self.approach_overshoot_ticks += 1
-        else:
-            self.approach_overshoot_ticks = 0
-
-        if dist_to_target <= 8.0 and alt <= 8.5:
-            print("APPROACH -> LAND")
-            self.land_axis_heading = heading
-            self.approach_min_target_alt = None
-            self.approach_overshoot_ticks = 0
+        if last_chance_land:
+            self.land_heading_ref = bearing_to_B
+            self.land_axis_heading = axis_heading
+            self.approach_recap_latched = False
+            print(
+                f"[APPROACH->LAND/LAST_CHANCE] "
+                f"toB={dist_to_B:.1f} alt={alt:.1f} "
+                f"cls={cls:.2f} latv={latv:.2f} "
+                f"crossE={cross_line_err:.1f} alongE={along_line_err:.1f} "
+                f"ovr={self.approach_overshoot_ticks}"
+            )
+            self.state = State.LAND
+            return            
+        # ---------------------------------------------------------
+        # Перехід у LAND
+        # Трохи м’якший gate, щоб не зависати в APPROACH,
+        # коли геометрія вже майже зібрана
+        # ---------------------------------------------------------
+        if (
+            dist_to_B <= 12.0 and
+            alt <= 9.0 and
+            cls <= 0.80 and
+            abs_latv <= 1.05 and
+            abs_cross <= 8.6
+        ):
+            self.land_heading_ref = bearing_to_B
+            self.land_axis_heading = axis_heading
+            self.approach_recap_latched = False
+            print(
+                f"[APPROACH->LAND] "
+                f"toB={dist_to_B:.1f} alt={alt:.1f} "
+                f"cls={cls:.2f} latv={latv:.2f} "
+                f"crossE={cross_line_err:.1f}"
+            )
             self.state = State.LAND
             return
 
-        if self.approach_overshoot_ticks >= 2 and dist_to_target <= 16.0:
-            print("APPROACH overshoot -> LAND")
-            self.land_axis_heading = heading
-            self.approach_min_target_alt = None
-            self.approach_overshoot_ticks = 0
-            self.state = State.LAND
-            return
             
     def handle_land(self, s):
         import math
@@ -1024,139 +1611,201 @@ class DroneFSM:
         alt = self.vehicle.location.global_relative_frame.alt or 0.0
         heading = self.vehicle.heading or 0.0
 
+        dist_to_B = distance_m(lat, lon, B_LAT, B_LON)
+        bearing_to_B = bearing_deg(lat, lon, B_LAT, B_LON)
         ground_speed = math.hypot(vx, vy)
 
-        ex = (B_LON - lon) * 111320.0 * math.cos(math.radians(lat))
-        ey = (B_LAT - lat) * 111320.0
+        # ---------------------------------------------------------
+        # Базові reference'и LAND
+        # ---------------------------------------------------------
+        axis_heading = getattr(self, "land_axis_heading", None)
+        if axis_heading is None:
+            axis_heading = getattr(self, "approach_axis_heading", None)
+        if axis_heading is None:
+            axis_heading = getattr(self, "capture_line_heading", None)
+        if axis_heading is None:
+            axis_heading = bearing_to_B
+        axis_heading = axis_heading % 360.0
 
-        dist_to_target = math.hypot(ex, ey)
-        bearing_to_target = bearing_deg(lat, lon, B_LAT, B_LON)
+        heading_ref = getattr(self, "land_heading_ref", None)
+        if heading_ref is None:
+            heading_ref = bearing_to_B
+        heading_ref = heading_ref % 360.0
 
-        if not hasattr(self, "land_axis_heading") or self.land_axis_heading is None:
-            self.land_axis_heading = heading
+        # ---------------------------------------------------------
+        # Геометрія відносно осі через B
+        # ---------------------------------------------------------
+        def to_local_m(lat0, lon0, lat1, lon1):
+            dx = (lon1 - lon0) * 111320.0 * math.cos(math.radians(lat0))
+            dy = (lat1 - lat0) * 111320.0
+            return dx, dy
 
-        axis = math.radians(self.land_axis_heading)
+        axis_ref_lat, axis_ref_lon = self.offset_gps(B_LAT, B_LON, axis_heading, 100.0)
 
-        along_err = ex * math.sin(axis) + ey * math.cos(axis)
-        cross_err = ex * math.cos(axis) - ey * math.sin(axis)
+        abx, aby = to_local_m(B_LAT, B_LON, axis_ref_lat, axis_ref_lon)
+        apx, apy = to_local_m(B_LAT, B_LON, lat, lon)
 
-        along_speed = vx * math.sin(axis) + vy * math.cos(axis)
-        cross_speed = vx * math.cos(axis) - vy * math.sin(axis)
+        ab_len = math.hypot(abx, aby)
+        if ab_len < 1e-6:
+            print("[LAND] invalid geometry")
+            return
 
-        br = math.radians(bearing_to_target)
+        crossE = (apx * aby - apy * abx) / ab_len
+        alongE = (apx * abx + apy * aby) / ab_len
+
+        axis = math.radians(axis_heading)
+        br = math.radians(bearing_to_B)
+
+        alongS = vx * math.sin(axis) + vy * math.cos(axis)
+        crossS = vx * math.cos(axis) - vy * math.sin(axis)
+
         cls = vx * math.cos(br) + vy * math.sin(br)
+        latv = -vx * math.sin(br) + vy * math.cos(br)
 
-        vertical_speed = (alt - self.prev_alt) / DT if self.prev_alt is not None else 0.0
+        # ---------------------------------------------------------
+        # Вертикальна швидкість
+        # ---------------------------------------------------------
+        vertical_speed = (alt - self.prev_alt) / self.DT if self.prev_alt is not None else 0.0
         self.prev_alt = alt
 
         # ---------------------------------------------------------
-        # Тяга
+        # Фази LAND
+        # Трохи раніше у WIND_MODE
         # ---------------------------------------------------------
-        if alt > 6.0:
-            throttle = 1456
-        elif alt > 3.0:
-            throttle = 1460
-        elif alt > 1.5:
-            throttle = 1462
+        if alt > 4.8:
+            phase = "SMART_FLARE"
         else:
-            throttle = 1464
-
-        if vertical_speed < -4.0:
-            throttle += 6
-        elif vertical_speed > -0.6:
-            throttle -= 3
-
-        throttle = clamp(throttle, 1000, 1485)
+            phase = "WIND_MODE"
+    
+        # ---------------------------------------------------------
+        # Yaw
+        # ---------------------------------------------------------
+        heading_error = normalize_angle_deg(axis_heading - heading)
+        yaw_cmd = 1500 + 0.8 * heading_error
+        yaw = clamp_rc(yaw_cmd, 1476, 1524)
 
         # ---------------------------------------------------------
-        # SMART FLARE
-        # Не тільки по dist, а по фактичному стану
+        # SMART_FLARE
         # ---------------------------------------------------------
-        smart_flare = (
-            (dist_to_target < 8.0 and cls < 1.0) or
-            (cls < 0.3) or
-            (along_err < 1.0) or
-            (alt < 4.0)
+        if phase == "SMART_FLARE":
+            # Ще трохи більш гальмівний flare
+            if dist_to_B > 10.0:
+                pitch = 1485
+            elif dist_to_B > 8.0:
+                pitch = 1483
+            else:
+                pitch = 1482
+
+            if abs(latv) > 1.0 or abs(crossE) > 7.8:
+                pitch = min(pitch, 1483)
+            if abs(latv) > 1.5:
+                pitch = min(pitch, 1482)
+    
+            # Трохи сильніший anti-drift + трохи ширші межі,
+            # щоб не впиратися надто рано
+            roll_cmd = (
+                1500
+                + 6.6 * (-latv)
+                + 4.6 * (-crossE)
+                + 4.8 * (-crossS)
+            )
+            roll = clamp_rc(roll_cmd, 1478, 1528)
+
+            if alt > 6.2:
+                target_vs = -1.35
+            elif alt > 5.6:
+                target_vs = -1.18
+            else:
+                target_vs = -1.00
+
+            vs_err = target_vs - vertical_speed
+            throttle = self.hover_throttle + 10.5 * vs_err
+            throttle = clamp_rc(throttle, 1452, 1461)
+
+            self.set_rc(
+                roll=roll,
+                pitch=pitch,
+                throttle=throttle,
+                yaw=yaw
+            )
+
+            print(
+                f"[LAND/{phase}] "
+                f"toB={dist_to_B:.1f} alt={alt:.1f} "
+                f"gs={ground_speed:.2f} cls={cls:.2f} latv={latv:.2f} "
+                f"alongE={alongE:.2f} crossE={abs(crossE):.2f} "
+                f"alongS={alongS:.2f} crossS={crossS:.2f} "
+                f"vs={vertical_speed:.2f} hdg={heading:.1f} axis={axis_heading:.1f} "
+                f"roll={roll} pitch={pitch} yaw={yaw} thr={throttle}"
+            )
+            return
+
+        # ---------------------------------------------------------
+        # WIND_MODE
+        # ---------------------------------------------------------
+        # Ще трохи менш "протягувальний" pitch
+        pitch = 1481
+        if abs(latv) > 1.2:
+            pitch = 1482
+        if abs(latv) > 1.7:
+            pitch = 1483
+
+        # Трохи сильніший anti-drift
+        roll_cmd = (
+            1500
+            + 5.8 * (-latv)
+            + 4.2 * (-crossE)
+            + 4.2 * (-crossS)
         )
+        roll = clamp_rc(roll_cmd, 1482, 1522)
 
-        if not smart_flare:
-            heading_error = normalize_angle_deg(self.land_axis_heading - heading)
-            heading_error = clamp(heading_error, -12.0, 12.0)
-
-            roll_cmd = 1500 + 0.8 * heading_error - 7.0 * cross_speed - 2.0 * cross_err
-            yaw = clamp(1500 + 2.2 * heading_error, 1468, 1532)
-
-            if along_speed > 1.5:
-                pitch = 1490
-            elif along_speed > 0.8:
-                pitch = 1493
-            else:
-                pitch = 1496
+        if alt > 3.8:
+            target_vs = -1.55
+        elif alt > 2.6:
+            target_vs = -1.35
+        elif alt > 1.5:
+            target_vs = -1.15
         else:
-            # -----------------------------------------------------
-            # SMART AGGRESSIVE FLARE
-            # -----------------------------------------------------
-            roll_cmd = 1500 - 11.5 * cross_speed - 3.8 * cross_err
-            yaw = 1500
+            target_vs = -0.90
 
-            if alt > 4.0:
-                if ground_speed > 2.0:
-                    pitch = 1478
-                elif ground_speed > 1.4:
-                    pitch = 1482
-                elif ground_speed > 0.8:
-                    pitch = 1486
-                else:
-                    pitch = 1490
-            elif alt > 2.0:
-                if ground_speed > 1.8:
-                    pitch = 1476
-                elif ground_speed > 1.2:
-                    pitch = 1480
-                elif ground_speed > 0.7:
-                    pitch = 1484
-                else:
-                    pitch = 1488
-            else:
-                if ground_speed > 1.5:
-                    pitch = 1474
-                elif ground_speed > 1.0:
-                    pitch = 1478
-                elif ground_speed > 0.6:
-                    pitch = 1482
-                else:
-                    pitch = 1486
+        vs_err = target_vs - vertical_speed
+        throttle = self.hover_throttle + 10.0 * vs_err
 
-        roll = clamp(roll_cmd, 1440, 1560)
+        if abs(latv) > 1.3 and alt < 3.5:
+            throttle += 2
+
+        throttle = clamp_rc(throttle, 1452, 1460)
 
         self.set_rc(
             roll=roll,
             pitch=pitch,
             throttle=throttle,
-            yaw=yaw
+            yaw=1500
         )
 
         print(
-            f"[LAND/SMART_FLARE] "
-            f"toB={dist_to_target:.1f} alt={alt:.1f} "
-            f"gs={ground_speed:.2f} cls={cls:.2f} "
-            f"alongE={along_err:.2f} crossE={cross_err:.2f} "
-            f"alongS={along_speed:.2f} crossS={cross_speed:.2f} "
-            f"vs={vertical_speed:.2f} "
-            f"hdg={heading:.1f} axis={self.land_axis_heading:.1f} "
-            f"roll={roll} pitch={pitch} yaw={yaw} thr={throttle}"
+            f"[LAND/{phase}] "
+            f"toB={dist_to_B:.1f} alt={alt:.1f} "
+            f"gs={ground_speed:.2f} cls={cls:.2f} latv={latv:.2f} "
+            f"alongE={alongE:.2f} crossE={abs(crossE):.2f} "
+            f"alongS={alongS:.2f} crossS={crossS:.2f} "
+            f"vs={vertical_speed:.2f} hdg={heading:.1f} axis={axis_heading:.1f} "
+            f"roll={roll} pitch={pitch} yaw=1500 thr={throttle}"
         )
 
-        if alt <= 0.8:
-            print("LAND complete")
+        # ---------------------------------------------------------
+        # Завершення
+        # ---------------------------------------------------------
+        if alt <= 0.7:
             self.set_rc(
                 roll=1500,
                 pitch=1500,
                 throttle=1000,
                 yaw=1500
             )
-            self.land_axis_heading = None
-            self.state = State.DONE            
+            print(f"LAND complete {'OFF target: toB=' + format(dist_to_B, '.1f') if dist_to_B > 2.0 else ''}".rstrip())
+            self.state = State.DONE
+            return 
             
     def step(self):
         s = self.read_state()
@@ -1168,11 +1817,15 @@ class DroneFSM:
         elif self.state == State.CAPTURE_LINE:
             self.handle_capture_line(s)
         elif self.state == State.CRUISE:
-            self.handle_cruise(s)
+            self.handle_cruise_along_line(s)
         elif self.state == State.APPROACH:
             self.handle_approach(s)
         elif self.state == State.LAND:
             self.handle_land(s)
+        #elif self.state == State.FINAL_BRAKE:
+        #    self.handle_final_brake(s)
+        #elif self.state == State.PRE_FINAL_ALIGN:
+        #    self.handle_pre_final_align(s)
         elif self.state == State.DONE:
             return False
         return True
@@ -1185,7 +1838,7 @@ class DroneFSM:
 
             while is_worked:
                 is_worked = self.step()
-                time.sleep(DT)
+                time.sleep(self.DT)
 
         finally:
             self.clear_rc()
@@ -1211,29 +1864,29 @@ def main():
     time.sleep(3)
 
     for name in [
-        #"SIM_SPEEDUP",
+        "SIM_SPEEDUP",
         "SIM_WIND_SPD",
         "SIM_WIND_DIR",
         "SIM_WIND_TURB",
-        "SIM_WIND_TURB_FREQ",
+        #"SIM_WIND_TURB_FREQ",
     ]:
         try:
             print("BEFORE", name, vehicle.parameters[name])
         except Exception as e:
             print("BEFORE", name, "ERR", e)
 
-    #set_param_checked(vehicle, "SIM_SPEEDUP", 2)
+    set_param_checked(vehicle, "SIM_SPEEDUP", 2)
     set_param_checked(vehicle, "SIM_WIND_SPD", 3)
     set_param_checked(vehicle, "SIM_WIND_DIR", 30)
     set_param_checked(vehicle, "SIM_WIND_TURB", 2)
-    set_param_checked(vehicle, "SIM_WIND_TURB_FREQ", 0.2)
+    #set_param_checked(vehicle, "SIM_WIND_TURB_FREQ", 0.2)
 
     for name in [
-        #"SIM_SPEEDUP",
+        "SIM_SPEEDUP",
         "SIM_WIND_SPD",
         "SIM_WIND_DIR",
         "SIM_WIND_TURB",
-        "SIM_WIND_TURB_FREQ",
+        #"SIM_WIND_TURB_FREQ",
     ]:
         try:
             print("AFTER", name, vehicle.parameters[name])
